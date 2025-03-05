@@ -1,0 +1,11 @@
+.richtext-rounded-\[0\.5rem\] {
+  border-radius: 0px;
+}
+
+.content .tiptap.ProseMirror {
+  padding: 0px !important;
+  min-height: 0px !important;
+}
+.richtext-flex.richtext-items-center.richtext-justify-between.richtext-p-3.richtext-border-t {
+  display: none;
+}

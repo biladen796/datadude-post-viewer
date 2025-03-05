@@ -1,0 +1,1571 @@
+[
+  {
+    "hash": "7f7340085a8c7bafe7445d844be01878836de5d2",
+    "date": "Sat Jan 11 22:24:58 2025 +0700",
+    "message": "chore: release v0.1.14",
+    "refs": "HEAD -> main, tag: v0.1.14, origin/main",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.14"
+  },
+  {
+    "hash": "761ac3675c043673ed8ff933b61f0e80e65ede4b",
+    "date": "Thu Jan 9 22:15:17 2025 +0800",
+    "message": "fix: import Word file by mammoth",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "index.md",
+      "ImportWord",
+      "ImportWordButton"
+    ]
+  },
+  {
+    "hash": "ea806f6616d1052ad437560d8131b077a33b37ac",
+    "date": "Sat Jan 4 17:34:54 2025 +0700",
+    "message": "chore: release v0.1.13",
+    "refs": "tag: v0.1.13",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.13"
+  },
+  {
+    "hash": "48b68408ca7132b964f411a75d39858dcbedfc07",
+    "date": "Sat Jan 4 16:53:37 2025 +0700",
+    "message": "chore: release v0.1.12",
+    "refs": "tag: v0.1.12",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.12"
+  },
+  {
+    "hash": "c8ea494018660f151df95c7144c785c36c3c9fa5",
+    "date": "Thu Dec 19 14:06:43 2024 +0700",
+    "message": "chore: release v0.1.11",
+    "refs": "tag: v0.1.11",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.11"
+  },
+  {
+    "hash": "3b395b8c20d8e4e9f27cd1a10bb9f615a9c4fbb3",
+    "date": "Thu Dec 12 07:07:40 2024 +0700",
+    "message": "chore: release v0.1.10",
+    "refs": "tag: v0.1.10",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.10"
+  },
+  {
+    "hash": "3969b5699661737a5badd897085e38139bdb809b",
+    "date": "Mon Nov 18 16:20:46 2024 +0700",
+    "message": "chore: release v0.1.9",
+    "refs": "tag: v0.1.9",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.9"
+  },
+  {
+    "hash": "8a95a169d60baad6d2e8720043812c04522ee182",
+    "date": "Mon Nov 18 12:03:21 2024 +0800",
+    "message": "feat: manually import katex styles",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "6e5afb0b4ef6ae4aaa9038d9f98236faece81314",
+    "date": "Sun Nov 17 22:42:48 2024 +0700",
+    "message": "chore: release v0.1.8",
+    "refs": "tag: v0.1.8",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.8"
+  },
+  {
+    "hash": "85b4053890a69d6992469da31165fe2a2cf5ebb4",
+    "date": "Sat Nov 9 22:34:33 2024 +0700",
+    "message": "chore: release v0.1.7",
+    "refs": "tag: v0.1.7",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.7"
+  },
+  {
+    "hash": "83270794b35baa20dc2ffbc9ce9615adf62b95f2",
+    "date": "Sat Nov 9 21:56:11 2024 +0700",
+    "message": "feat: flip image",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "Image",
+      "ImageView"
+    ]
+  },
+  {
+    "hash": "2794c3065eb364efc4adf1a29f3c7d7edf4cc33a",
+    "date": "Wed Nov 6 22:44:39 2024 +0700",
+    "message": "chore: release v0.1.6",
+    "refs": "tag: v0.1.6",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.6"
+  },
+  {
+    "hash": "639a1fc3794c8d116e8ed7e8f94c8a8af965a13d",
+    "date": "Wed Nov 6 18:20:24 2024 +0700",
+    "message": "chore: release v0.1.5",
+    "refs": "tag: v0.1.5",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.5"
+  },
+  {
+    "hash": "b5ca97b7ea4cc140c88149d9101f08f4736b9d66",
+    "date": "Wed Nov 6 18:19:58 2024 +0700",
+    "message": "fix: twitter bubble",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "FormEditLinkTwitter"
+    ]
+  },
+  {
+    "hash": "dfd76778760ad10a627cddaa4918dec78a998af6",
+    "date": "Wed Nov 6 18:05:16 2024 +0700",
+    "message": "chore: release v0.1.4",
+    "refs": "tag: v0.1.4",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.4"
+  },
+  {
+    "hash": "8eda263c235c8c3b2092866996810513cca86d96",
+    "date": "Wed Nov 6 17:57:26 2024 +0700",
+    "message": "feat: add extension twitter",
+    "refs": "origin/feat-twitter, feat-twitter",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "ActionImageButton",
+      "LinkEditBlock",
+      "Twitter",
+      "FormEditLinkTwitter",
+      "NodeViewTweet",
+      "TwitterActiveButton",
+      "index",
+      "ActiveVideoButton"
+    ]
+  },
+  {
+    "hash": "ba803079e2eb26bacc1f41a25f643a2edc4e48a0",
+    "date": "Wed Nov 6 10:58:04 2024 +0100",
+    "message": "fix(button propagation): stop the submit button propagation and close the link popover when applying (close #99)",
+    "refs": "",
+    "author_name": "Angel",
+    "author_email": "hi@asiles.dev",
+    "functions": [
+      "ActionImageButton",
+      "LinkEditBlock",
+      "LinkEditPopover",
+      "ActiveVideoButton"
+    ]
+  },
+  {
+    "hash": "d1ee3e1460ba4de5b9c5ac4a0523d65860de7fe3",
+    "date": "Wed Nov 6 01:05:01 2024 +0700",
+    "message": "chore: release v0.1.3",
+    "refs": "tag: v0.1.3",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.3"
+  },
+  {
+    "hash": "93d9730ddee560337c47355591bcb7b18267e4d2",
+    "date": "Wed Nov 6 01:03:22 2024 +0700",
+    "message": "fix: parse inline image",
+    "refs": "origin/fix-parse-inline-image, fix-parse-inline-image",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "Image"
+    ]
+  },
+  {
+    "hash": "c08bc35fa7c0e7c6e1979c90434712be201d171e",
+    "date": "Sun Nov 3 22:47:46 2024 +0700",
+    "message": "chore: release v0.1.2",
+    "refs": "tag: v0.1.2",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.2"
+  },
+  {
+    "hash": "da82fe50debc6f694154f9c621ca246b90806625",
+    "date": "Sun Nov 3 15:59:27 2024 +0700",
+    "message": "chore: release v0.1.1",
+    "refs": "tag: v0.1.1",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.1"
+  },
+  {
+    "hash": "ec29cb37a8a10fcf16b9aa4bb231a733ee351ca1",
+    "date": "Fri Oct 25 09:52:49 2024 +0700",
+    "message": "docs: update changelog",
+    "refs": "feat-ai-image",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "c0346e35cef298af7b4275c6b548349abbf7bef2",
+    "date": "Fri Oct 25 09:04:55 2024 +0700",
+    "message": "chore: release v0.1.0",
+    "refs": "tag: v0.1.0",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.1.0"
+  },
+  {
+    "hash": "aa530df32f190b0fcdbb4036a57fe9a6d5269e5d",
+    "date": "Fri Oct 25 08:15:44 2024 +0700",
+    "message": "chore: release v0.0.57",
+    "refs": "tag: v0.0.57",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.57"
+  },
+  {
+    "hash": "548794f63504fe3e6fd267987fd21747e3e96bf5",
+    "date": "Fri Oct 25 08:11:32 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "47930babbc5e7d2017bd1a94029ecfd969946911",
+    "date": "Fri Oct 25 08:04:15 2024 +0700",
+    "message": "chore: release v0.0.56",
+    "refs": "tag: v0.0.56",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.56"
+  },
+  {
+    "hash": "fcd95bf86ff6a815ca7691a2ecb0f45da3492a0f",
+    "date": "Fri Oct 25 08:00:33 2024 +0700",
+    "message": "feat: image inline, refactor video upload",
+    "refs": "origin/feat-inline-image, feat-inline-image",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Image",
+      "ActionImageButton",
+      "ImageCropper",
+      "ImageView",
+      "store",
+      "ImageGif",
+      "ImageGifActionButton",
+      "ImageUpload",
+      "ImageUploader",
+      "index",
+      "Mermaid",
+      "groups",
+      "Video",
+      "ActiveVideoButton",
+      "VideoUpload",
+      "VideoUploaderView"
+    ]
+  },
+  {
+    "hash": "0711dde13c6ddf55c9c058256bb9552efad6c753",
+    "date": "Wed Oct 23 14:26:22 2024 +0700",
+    "message": "chore: release v0.0.55",
+    "refs": "tag: v0.0.55",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.55"
+  },
+  {
+    "hash": "9ad4176bf6b6826ae931e48f486604a24c7ff0db",
+    "date": "Wed Oct 23 14:02:27 2024 +0700",
+    "message": "chore: release v0.0.54",
+    "refs": "tag: v0.0.54",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.54"
+  },
+  {
+    "hash": "7a87f03900163d2bfeb58a18e05ef8e048ae17b3",
+    "date": "Wed Oct 23 13:59:53 2024 +0700",
+    "message": "feat: inline katex",
+    "refs": "origin/feat-inline-katex, feat-inline-katex",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "BaseKit",
+      "Katex",
+      "KatexWrapper"
+    ]
+  },
+  {
+    "hash": "d6ea4c28e06957ba5ff7cae7dc6b60e49dd6d294",
+    "date": "Mon Oct 21 17:04:37 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "d486299d2d23c1a07b9656153d9138c70540aec4",
+    "date": "Sun Oct 20 14:08:26 2024 +0700",
+    "message": "chore: release v0.0.53",
+    "refs": "tag: v0.0.53",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.53"
+  },
+  {
+    "hash": "463d88148ef982965c060ac98c95bf867981dbe4",
+    "date": "Sun Oct 20 13:45:57 2024 +0700",
+    "message": "chore: release v0.0.52",
+    "refs": "tag: v0.0.52",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.52"
+  },
+  {
+    "hash": "0ee6f3f406477ee50f256f087029d0deb0b22241",
+    "date": "Sun Oct 20 13:45:28 2024 +0700",
+    "message": "fix: codeblock",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "CodeBlockActiveButton"
+    ]
+  },
+  {
+    "hash": "016a1504861c0522123eb8484c260a642fd177ce",
+    "date": "Sun Oct 20 13:24:43 2024 +0700",
+    "message": "chore: release v0.0.51",
+    "refs": "tag: v0.0.51",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.51"
+  },
+  {
+    "hash": "1eacdd3eb9368265a42e5f2f270ec3836a0df9ed",
+    "date": "Sun Oct 20 13:14:13 2024 +0700",
+    "message": "chore: release v0.0.51",
+    "refs": "",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.51"
+  },
+  {
+    "hash": "48ed570ba95698e257b5045a95c74c6c495a84b7",
+    "date": "Sun Oct 20 12:58:25 2024 +0700",
+    "message": "feat: add extension mermaid",
+    "refs": "origin/feat-mermaid",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Image",
+      "ImageGif",
+      "Mermaid",
+      "EditMermaidBlock",
+      "MermaidActiveButton",
+      "NodeViewMermaid",
+      "index"
+    ]
+  },
+  {
+    "hash": "5ed1ac5fd5ae3d9c68c4587af89d3a63e0cb7f6b",
+    "date": "Thu Oct 17 00:33:06 2024 +0700",
+    "message": "chore: release v0.0.50",
+    "refs": "tag: v0.0.50",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.50"
+  },
+  {
+    "hash": "96ebd68db62253e0ef1e3e5a289b614eaf2b290d",
+    "date": "Thu Oct 17 00:09:29 2024 +0700",
+    "message": "chore: release v0.0.49",
+    "refs": "tag: v0.0.49",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.49"
+  },
+  {
+    "hash": "6809a966472f73a5dbf526d510c80ae8c7aef85f",
+    "date": "Thu Oct 17 00:06:45 2024 +0700",
+    "message": "feat: add crop image upload",
+    "refs": "origin/update-extension-image, update-extension-image",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "EmojiPicker",
+      "ImageGifActionButton",
+      "ImageCropper",
+      "ImageUploader",
+      "KatexActiveButton",
+      "LinkEditPopover",
+      "CreateTablePopover",
+      "TextAlignMenuButton",
+      "TextDirectionButton"
+    ]
+  },
+  {
+    "hash": "03c8cbca20869595018acb678e46a745e4f3b18a",
+    "date": "Sat Oct 12 01:19:04 2024 +0700",
+    "message": "chore: release v0.0.48",
+    "refs": "tag: v0.0.48",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.48"
+  },
+  {
+    "hash": "f44069b073a3c2521442d216fc1468b13931f3d3",
+    "date": "Wed Oct 9 17:02:38 2024 +0700",
+    "message": "chore: release v0.0.47",
+    "refs": "tag: v0.0.47",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.47"
+  },
+  {
+    "hash": "bfe055671e5b584b8fc283ec55092d8dc0778048",
+    "date": "Wed Oct 9 16:59:34 2024 +0700",
+    "message": "feat: show limit charactor",
+    "refs": "origin/show-limit, show-limit",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "BaseKit"
+    ]
+  },
+  {
+    "hash": "5829bf32d28fe4502291646fddf5445bbcc6e91f",
+    "date": "Wed Oct 9 14:14:26 2024 +0700",
+    "message": "docs: update changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "0fa5b53f75dd21a9f1b5130dc3bf2e6022925715",
+    "date": "Wed Oct 9 13:55:57 2024 +0700",
+    "message": "chore: release v0.0.46",
+    "refs": "tag: v0.0.46",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.46"
+  },
+  {
+    "hash": "14c8f1cd46f6ee4713ec48f74d7c290e73cea053",
+    "date": "Wed Oct 9 13:54:20 2024 +0700",
+    "message": "fix: fix export word, style gifs list",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "ExportWord",
+      "ImageGifActionButton"
+    ]
+  },
+  {
+    "hash": "d5a74edbb9dbaaeb512fb4b28a60b9be45fc29b8",
+    "date": "Wed Oct 9 09:51:55 2024 +0700",
+    "message": "chore: release v0.0.45",
+    "refs": "tag: v0.0.45",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.45"
+  },
+  {
+    "hash": "0ec19427a271051b519c72a81c41028e4820a786",
+    "date": "Wed Oct 9 09:48:46 2024 +0700",
+    "message": "feat: add extension image gif",
+    "refs": "origin/feat-extension-gif, feat-extension-gif",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "ImageGif",
+      "ImageGifActionButton",
+      "ImageGifView",
+      "index"
+    ]
+  },
+  {
+    "hash": "5b0b4aa21ab5539c4c3eb464d7c825f01da05180",
+    "date": "Tue Oct 8 08:39:49 2024 +0700",
+    "message": "chore: release v0.0.44",
+    "refs": "tag: v0.0.44",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.44"
+  },
+  {
+    "hash": "6ba701a908919c4bc80e1e7b7c3615c19c3d4a27",
+    "date": "Tue Oct 8 08:38:13 2024 +0700",
+    "message": "docs: update ImageUpload",
+    "refs": "origin/update-post-upload, update-post-upload",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "ab1caa914c44cb8309ef91649204042a8fbad97a",
+    "date": "Tue Oct 8 08:36:08 2024 +0700",
+    "message": "feat: add props post upload image",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "ImageUpload",
+      "ImageUploader"
+    ]
+  },
+  {
+    "hash": "5fb6dc38a575f5839bfa9313d47bb3dd7cf8966a",
+    "date": "Sat Oct 5 13:33:52 2024 +0700",
+    "message": "chore: release v0.0.43",
+    "refs": "tag: v0.0.43",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.43"
+  },
+  {
+    "hash": "282ead4bb8ec94c2a343ae507671df3c555d5b2b",
+    "date": "Sat Sep 28 17:32:59 2024 +0700",
+    "message": "chore: release v0.0.42",
+    "refs": "tag: v0.0.42",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.42"
+  },
+  {
+    "hash": "cbb52dd0f4c2de6dee01e3c14f52ccf3602824bf",
+    "date": "Fri Sep 27 00:23:09 2024 +0700",
+    "message": "chore: release v0.0.41",
+    "refs": "tag: v0.0.41",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.41"
+  },
+  {
+    "hash": "b38b9d770fbe54deed7ed7dd2a602490caa54a9d",
+    "date": "Fri Sep 27 00:20:20 2024 +0700",
+    "message": "feat: add attachment",
+    "refs": "origin/feat-attachment, feat-attachment",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Attachment",
+      "FileIcon",
+      "NodeViewAttachment",
+      "index.module.scss",
+      "index"
+    ]
+  },
+  {
+    "hash": "6a82649c6afdc62048b0fa41010619a101f2c4f3",
+    "date": "Thu Sep 26 22:07:42 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "a4acaa734a79ebdf4bbf433bbb5e417a2cc49ec6",
+    "date": "Thu Sep 26 21:52:44 2024 +0700",
+    "message": "chore: release v0.0.40",
+    "refs": "tag: v0.0.40",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.40"
+  },
+  {
+    "hash": "da1a747c5a5a317c27d5fec961e2699312d14eca",
+    "date": "Thu Sep 26 20:26:56 2024 +0700",
+    "message": "docs: update changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "f8be7b3cbfccfed661011c2da40eb67f94e58555",
+    "date": "Thu Sep 26 20:26:00 2024 +0700",
+    "message": "chore: release v0.0.39",
+    "refs": "tag: v0.0.39",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.39"
+  },
+  {
+    "hash": "1c325f51506bccb892668ef71fb8e4f16e2d43fb",
+    "date": "Thu Sep 26 20:25:16 2024 +0700",
+    "message": "docs: update doc",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "1a1789f16eadea20c0191e54b683e4e111cbc6a1",
+    "date": "Thu Sep 26 19:57:32 2024 +0700",
+    "message": "feat: add mention",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Mention",
+      "NodeViewMentionList",
+      "index.module.scss",
+      "index"
+    ]
+  },
+  {
+    "hash": "19384910eba9f58d44c2845fac21e69ebba79c5f",
+    "date": "Wed Sep 25 13:54:52 2024 +0700",
+    "message": "chore: release v0.0.38",
+    "refs": "tag: v0.0.38",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.38"
+  },
+  {
+    "hash": "f7ace9d7bc5e6bf4f3eed3b5616d22ad41058eb4",
+    "date": "Wed Sep 25 13:48:06 2024 +0700",
+    "message": "chore: release v0.0.39",
+    "refs": "",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.39"
+  },
+  {
+    "hash": "c85825b21a8ea90e144e39bec67ebcadefe076b3",
+    "date": "Wed Sep 25 13:33:50 2024 +0700",
+    "message": "chore: release v0.0.38",
+    "refs": "",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.38"
+  },
+  {
+    "hash": "c12670448f40b8a0609a6d2fdbb5f432e7c0f677",
+    "date": "Wed Sep 25 13:25:05 2024 +0700",
+    "message": "feat: add text direction",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "TextDirection",
+      "TextDirectionButton",
+      "index"
+    ]
+  },
+  {
+    "hash": "0d425a66300a7a3bd6fdb4eb452ce64fceb059d4",
+    "date": "Fri Sep 20 10:24:52 2024 +0700",
+    "message": "chore: release v0.0.37",
+    "refs": "tag: v0.0.37",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.37"
+  },
+  {
+    "hash": "8770e62d579b5cff3f6ab645f63eea661160910d",
+    "date": "Fri Sep 20 10:24:25 2024 +0700",
+    "message": "fix: paste image from clipboard",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "ImageUpload"
+    ]
+  },
+  {
+    "hash": "d9b0c54b5ffc51ff47577bfc049b8f67a6965e70",
+    "date": "Tue Sep 17 16:37:03 2024 +0700",
+    "message": "chore: release v0.0.36",
+    "refs": "tag: v0.0.36",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.36"
+  },
+  {
+    "hash": "49f629327882d8a4614e29fead3d89da6d04eb89",
+    "date": "Mon Sep 9 14:32:39 2024 +0700",
+    "message": "docs: update changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "9915590367d2429973c74024f96df8fb9e5a20d5",
+    "date": "Mon Sep 9 11:11:59 2024 +0700",
+    "message": "chore: release v0.0.35",
+    "refs": "tag: v0.0.35",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.35"
+  },
+  {
+    "hash": "05b271b1dc2440a59ca9e503b917d78d24874e69",
+    "date": "Sat Sep 7 08:57:18 2024 +0700",
+    "message": "chore: release v0.0.34",
+    "refs": "tag: v0.0.34",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.34"
+  },
+  {
+    "hash": "1fafca3a5a22a9da982270b057fadda048710235",
+    "date": "Sat Sep 7 08:54:42 2024 +0700",
+    "message": "fix(image): display image block",
+    "refs": "origin/fix-image-extension, fix-image-extension",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "Image",
+      "ImageView"
+    ]
+  },
+  {
+    "hash": "3ce619c4cce08e1d5624e755b999473d43ed4bdc",
+    "date": "Mon Sep 2 15:56:12 2024 +0700",
+    "message": "chore: release v0.0.33",
+    "refs": "tag: v0.0.33",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.33"
+  },
+  {
+    "hash": "11cd2ae65ef1cd5714da472117d924714ae1f01d",
+    "date": "Mon Sep 2 14:57:23 2024 +0700",
+    "message": "chore: release v0.0.32",
+    "refs": "tag: v0.0.32",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.32"
+  },
+  {
+    "hash": "5c2243053758d872d7382aee6012af7f1c2a23e9",
+    "date": "Sun Sep 1 23:20:56 2024 +0700",
+    "message": "chore: release v0.0.31",
+    "refs": "tag: v0.0.31",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.31"
+  },
+  {
+    "hash": "0a2a646a162b667c0f7455e904f7543407068935",
+    "date": "Sun Sep 1 23:16:54 2024 +0700",
+    "message": "feat: add excalidraw",
+    "refs": "origin/feat/excalidraw, feat/excalidraw",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Excalidraw",
+      "ExcalidrawActiveButton",
+      "NodeViewExcalidraw",
+      "index.module.scss",
+      "index"
+    ]
+  },
+  {
+    "hash": "5d5ee6ad23463aab601421826bb82800c549c701",
+    "date": "Thu Aug 29 09:38:29 2024 +0700",
+    "message": "chore: release v0.0.30",
+    "refs": "tag: v0.0.30",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.30"
+  },
+  {
+    "hash": "1af897a81c2047a87cbf351ca214e78a686ef211",
+    "date": "Thu Aug 29 09:35:02 2024 +0700",
+    "message": "chore: release v0.0.29",
+    "refs": "tag: v0.0.29",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.29"
+  },
+  {
+    "hash": "3f27b2768ec1e29080b9d1eb4c152f84766e6733",
+    "date": "Tue Aug 27 16:45:22 2024 +0700",
+    "message": "chore: release v0.0.28",
+    "refs": "tag: v0.0.28",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.28"
+  },
+  {
+    "hash": "71b3efd4ca5e7204e7171746fb8641f68c5ec720",
+    "date": "Tue Aug 27 16:24:46 2024 +0700",
+    "message": "chore: release v0.0.27",
+    "refs": "tag: v0.0.27",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.27"
+  },
+  {
+    "hash": "8b37e2a12db4f77039695ed7bc0c03425506d13f",
+    "date": "Tue Aug 27 16:23:41 2024 +0700",
+    "message": "fix: lint",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "CodeBlockActiveButton",
+      "EmojiList",
+      "EmojiPicker",
+      "FontFamilyButton",
+      "FontSizeMenuButton",
+      "HeadingButton",
+      "ImageView",
+      "LineHeightDropdown",
+      "ActionMoreButton",
+      "CommandsList",
+      "CreateTablePopover",
+      "NodeViewTableOfContent",
+      "TextAlignMenuButton",
+      "TextDropdown"
+    ]
+  },
+  {
+    "hash": "7aff366ed84a3a681fa21cce3756f7997c21d8e5",
+    "date": "Tue Aug 27 11:45:29 2024 +0700",
+    "message": "chore: release v0.0.26",
+    "refs": "tag: v0.0.26",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.26"
+  },
+  {
+    "hash": "2651303c7f3b0637939b3c226a3be549fa6ce82f",
+    "date": "Tue Aug 27 11:43:17 2024 +0700",
+    "message": "feat: add table of content",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "TableOfContent",
+      "NodeViewTableOfContent",
+      "TableOfContentActionButton",
+      "index.module.scss",
+      "index"
+    ]
+  },
+  {
+    "hash": "16dafc4e1bb3a54c0c550a8bee8470976d47cc12",
+    "date": "Tue Aug 27 11:14:35 2024 +0700",
+    "message": "fix: parse katex content",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "Katex"
+    ]
+  },
+  {
+    "hash": "dd3de16eda9075cb6609dcc9333842aeef561b2d",
+    "date": "Mon Aug 26 21:56:13 2024 +0700",
+    "message": "chore: release v0.0.25",
+    "refs": "tag: v0.0.25",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.25"
+  },
+  {
+    "hash": "9b3771ea8aee4c590930e155efa039a1a9eddddc",
+    "date": "Mon Aug 26 21:46:18 2024 +0700",
+    "message": "docs: update changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "7db4cc92e26f817388b96ce36de5360cf1bb0154",
+    "date": "Mon Aug 26 21:45:23 2024 +0700",
+    "message": "chore: release v0.0.24",
+    "refs": "tag: v0.0.24",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.24"
+  },
+  {
+    "hash": "dd9eb49554f91857d98fc0dfb1b255917ad22cac",
+    "date": "Fri Aug 23 16:55:48 2024 +0700",
+    "message": "chore: release v0.0.23",
+    "refs": "tag: v0.0.23, feat/collaboration",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.23"
+  },
+  {
+    "hash": "5082a06f5a97eda85ee033aea50b16cd5665f615",
+    "date": "Fri Aug 23 11:18:25 2024 +0700",
+    "message": "chore: release v0.0.22",
+    "refs": "tag: v0.0.22",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.22"
+  },
+  {
+    "hash": "65b2d38966db4e4d5eb4c0c851774008051569c3",
+    "date": "Fri Aug 23 08:44:12 2024 +0700",
+    "message": "docs: gen changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "8f724046ecf29ec6f357678cb0c5d1be35509180",
+    "date": "Fri Aug 23 08:43:28 2024 +0700",
+    "message": "chore: release v0.0.21",
+    "refs": "tag: v0.0.21",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.21"
+  },
+  {
+    "hash": "e3f7e4a46eaf83f5b85531ed1bebba3a4d95b369",
+    "date": "Fri Aug 23 08:42:30 2024 +0700",
+    "message": "docs: update import word, export word",
+    "refs": "origin/feat-export-word, feat-export-word",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "42653e4e7e2e6c1eb45b3fd68df3419a60043896",
+    "date": "Fri Aug 23 08:38:13 2024 +0700",
+    "message": "feat: basic import word, export word",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "ExportWord",
+      "index",
+      "ImportWord",
+      "ImportWordButton"
+    ]
+  },
+  {
+    "hash": "83109c8a38d2ad10a1e482c2386167b84b4ae53c",
+    "date": "Thu Aug 22 22:23:15 2024 +0700",
+    "message": "docs: update export pdf",
+    "refs": "origin/feat-export-pdf, feat-export-pdf",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "e9faa372bee78d50b97074865f609da1adb2a4b4",
+    "date": "Thu Aug 22 17:23:13 2024 +0700",
+    "message": "chore: release v0.0.20",
+    "refs": "tag: v0.0.20",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.20"
+  },
+  {
+    "hash": "6a39e8c55d8aec1e9fa63953cb7dfaf82396ea5a",
+    "date": "Thu Aug 22 01:22:48 2024 +0700",
+    "message": "chore: release v0.0.19",
+    "refs": "tag: v0.0.19",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.19"
+  },
+  {
+    "hash": "97f052b844a83a91c0b9835a7e79b3711d7199c0",
+    "date": "Thu Aug 22 01:12:04 2024 +0700",
+    "message": "chore: release v0.0.18",
+    "refs": "tag: v0.0.18",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.18"
+  },
+  {
+    "hash": "df957adbeef0edab54cc86b6fed979414339985f",
+    "date": "Wed Aug 21 10:16:53 2024 +0700",
+    "message": "chore: release v0.0.17",
+    "refs": "tag: v0.0.17",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.17"
+  },
+  {
+    "hash": "8a5aaab07451af7df548fee90a772ba984df2df3",
+    "date": "Wed Aug 21 08:47:32 2024 +0700",
+    "message": "chore: release v0.0.16",
+    "refs": "tag: v0.0.16",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.16"
+  },
+  {
+    "hash": "94f181c1ba40443a4763ef7c77d3882c78546433",
+    "date": "Wed Aug 21 07:39:20 2024 +0700",
+    "message": "chore: release v0.0.15",
+    "refs": "tag: v0.0.15",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.15"
+  },
+  {
+    "hash": "6740cbf99a6efd388fc5d5cb15c539fc6545beee",
+    "date": "Wed Aug 21 00:44:33 2024 +0700",
+    "message": "chore: release v0.0.14",
+    "refs": "tag: v0.0.14",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.14"
+  },
+  {
+    "hash": "383e89644fbd5e15c7e8bd94f195384ac621c6f8",
+    "date": "Tue Aug 20 23:03:47 2024 +0700",
+    "message": "chore: release v0.0.13",
+    "refs": "tag: v0.0.13",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.13"
+  },
+  {
+    "hash": "002cd9d7f90ac1bf104af3cf9c81645ef20a8d71",
+    "date": "Tue Aug 20 23:00:55 2024 +0700",
+    "message": "fix: conflict tailwindcss class with projects use tailwindcss",
+    "refs": "origin/fix-conflict-tailwindcss-class, fix-conflict-tailwindcss-class",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "CodeBlockActiveButton",
+      "ColorActionButton",
+      "EmojiList",
+      "EmojiPicker",
+      "FontFamilyButton",
+      "FontSizeMenuButton",
+      "HeadingButton",
+      "HighlightActionButton",
+      "HistoryActionButton",
+      "IframeNodeView",
+      "ImageUploader",
+      "KatexActiveButton",
+      "KatexWrapper",
+      "LineHeightDropdown",
+      "LinkEditBlock",
+      "LinkEditPopover",
+      "LinkViewBlock",
+      "ActionMoreButton",
+      "ColumnsMenu",
+      "SearchAndReplaceButton",
+      "CommandsList",
+      "CreateTablePopover",
+      "TextAlignMenuButton",
+      "TextDropdown",
+      "VideoUploaderView"
+    ]
+  },
+  {
+    "hash": "21746e3190d453addeb94086e35c1fcb0db50287",
+    "date": "Tue Aug 20 08:39:11 2024 +0700",
+    "message": "chore: release v0.0.12",
+    "refs": "tag: v0.0.12",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.12"
+  },
+  {
+    "hash": "ef8e08f611f9acfaddad130f48dcab2a1c071329",
+    "date": "Tue Aug 20 08:36:35 2024 +0700",
+    "message": "feat: add extention katex",
+    "refs": "origin/feat-katex, feat-katex",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Katex",
+      "KatexActiveButton",
+      "KatexWrapper",
+      "index"
+    ]
+  },
+  {
+    "hash": "f2e955a0930abf9b3f0c4207f1fa528f2864720e",
+    "date": "Tue Aug 20 07:04:40 2024 +0700",
+    "message": "feat: add extention emoji",
+    "refs": "origin/feat-emoji, feat-emoji",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "Emoji",
+      "EmojiList",
+      "emojis",
+      "EmojiPicker",
+      "constants",
+      "emoji.json",
+      "index"
+    ]
+  },
+  {
+    "hash": "625cc324d73b1a35ddabbc0a862f8d7ce30537ee",
+    "date": "Mon Aug 19 18:33:48 2024 +0700",
+    "message": "docs: gen changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "621e8987bc2495938d6bf1949d86fa2341452df9",
+    "date": "Mon Aug 19 18:32:40 2024 +0700",
+    "message": "chore: release v0.0.11",
+    "refs": "tag: v0.0.11",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.11"
+  },
+  {
+    "hash": "db3eff0691fe984d692817866cfef6911cf52906",
+    "date": "Mon Aug 19 18:29:59 2024 +0700",
+    "message": "feat: search and replace text",
+    "refs": "origin/feat-search-replace, feat-search-replace",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "LinkEditBlock",
+      "SearchAndReplace",
+      "SearchAndReplaceButton",
+      "index"
+    ]
+  },
+  {
+    "hash": "0280859ece7f6bc35aab3249be5fa49bd194d705",
+    "date": "Mon Aug 19 16:00:46 2024 +0700",
+    "message": "feat: export pdf",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "ExportPdf",
+      "index"
+    ]
+  },
+  {
+    "hash": "e5a942c88fae527114b3f800b8f8a7aae319b4da",
+    "date": "Mon Aug 19 13:57:19 2024 +0700",
+    "message": "docs: gen changelog",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "7c75d92269705411c3e57e2d037f5425f3fa8764",
+    "date": "Mon Aug 19 13:56:27 2024 +0700",
+    "message": "chore: release v0.0.10",
+    "refs": "tag: v0.0.10",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.10"
+  },
+  {
+    "hash": "1cde81df165a0eb7275d518815d4b749b63f861f",
+    "date": "Mon Aug 19 13:50:26 2024 +0700",
+    "message": "feat: codeblock highlight use shiki",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "CodeBlock",
+      "CodeBlockActiveButton",
+      "highlighter",
+      "shiki-plugin"
+    ]
+  },
+  {
+    "hash": "d832e952fd47ef4f94d96b097794b858cd7636db",
+    "date": "Sun Aug 18 17:53:02 2024 +0800",
+    "message": "docs(LineHeight): add options docs",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "index.md",
+      "LineHeight"
+    ]
+  },
+  {
+    "hash": "867ceaf270ff5d1020ce09dc41f9b2dc1543d8fd",
+    "date": "Sun Aug 18 17:39:03 2024 +0800",
+    "message": "feat(FontSize): Add options support for FontSize extension",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "index.md",
+      "FontSize"
+    ]
+  },
+  {
+    "hash": "1b2c88e1e0a6099611d9da07b430d07a5b62ee2f",
+    "date": "Sun Aug 18 17:13:51 2024 +0800",
+    "message": "feat(FontFamily): Add options support for FontFamily extension",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "index.md",
+      "FontFamily"
+    ]
+  },
+  {
+    "hash": "61e811e201159e8dc531afbb92027d53a3e736c9",
+    "date": "Sun Aug 18 16:27:12 2024 +0800",
+    "message": "feat(Color): Add options support for Color extension",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "index.md",
+      "Color",
+      "ColorActionButton"
+    ]
+  },
+  {
+    "hash": "7c3fdf4cbba73ec6249d54b08e3d3dbb2370f5d7",
+    "date": "Sun Aug 18 13:33:51 2024 +0700",
+    "message": "docs: update",
+    "refs": "tag: v0.0.9, master",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "extensions.json"
+    ]
+  },
+  {
+    "hash": "0736ba9c58fa803327fa560939d5e6cc72634330",
+    "date": "Sun Aug 18 13:33:03 2024 +0700",
+    "message": "chore: release v0.0.9",
+    "refs": "",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.9"
+  },
+  {
+    "hash": "d436da9374eb32f8674586f3ef1358923bf46d84",
+    "date": "Sun Aug 18 01:27:07 2024 +0800",
+    "message": "feat: support dynamic rendering of bubble menu and remove bubble option",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "BaseKit",
+      "Bold",
+      "Code",
+      "Color",
+      "FontFamily",
+      "Highlight",
+      "ImageUpload",
+      "Italic",
+      "Link",
+      "ColumnsMenu",
+      "SlashCommand",
+      "groups",
+      "Strike",
+      "Underline",
+      "VideoUpload",
+      "VideoUploaderView"
+    ]
+  },
+  {
+    "hash": "d306712f1d4ef0072dc6337b31a272b65571feb5",
+    "date": "Sat Aug 17 08:46:27 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "3ebadb18cbd22fec97515fbc2ea7ae7eac3f4e96",
+    "date": "Sat Aug 17 08:39:45 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md"
+    ]
+  },
+  {
+    "hash": "71d98effeffed7faae60be51a4936784801c02a8",
+    "date": "Fri Aug 16 22:36:21 2024 +0700",
+    "message": "chore: release v0.0.8",
+    "refs": "tag: v0.0.8",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.8"
+  },
+  {
+    "hash": "5caab13dba1ca35693fb37d36e66c349a063b2fc",
+    "date": "Fri Aug 16 22:30:49 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "TableExtension",
+      "index",
+      "table"
+    ]
+  },
+  {
+    "hash": "594076098c3a94d1a98269933709353e2a636f4f",
+    "date": "Fri Aug 16 22:28:17 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "TableExtension",
+      "table"
+    ]
+  },
+  {
+    "hash": "9abff4c459aa690d68d0cb6bce68f2181d85e4b2",
+    "date": "Fri Aug 16 22:22:21 2024 +0700",
+    "message": "docs: update",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "index.md",
+      "text-align.md",
+      "clear-format.md",
+      "format-painter.md",
+      "code-block.md",
+      "code.md",
+      "background-color.md",
+      "text-color.md",
+      "multiple-column.md",
+      "bullet-list.md",
+      "ordered-list.md",
+      "task-list.md",
+      "image.md",
+      "video.md",
+      "font-bold.md",
+      "font-family.md",
+      "font-italic.md",
+      "font-size.md",
+      "font-strike.md",
+      "font-underline.md",
+      "heading.md",
+      "subscript.md",
+      "extensions.json",
+      "BaseKit",
+      "Columns",
+      "MultiColumn",
+      "index",
+      "ColumnsMenu"
+    ]
+  },
+  {
+    "hash": "4aec3a84a7008a466c4c6423f55d11bb1e1807d1",
+    "date": "Thu Aug 15 16:23:39 2024 +0700",
+    "message": "chore: release v0.0.7",
+    "refs": "tag: v0.0.7",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.7"
+  },
+  {
+    "hash": "765cd766625da4d97e002aeff22a4bee41fbab85",
+    "date": "Thu Aug 15 16:19:39 2024 +0700",
+    "message": "fix: pass props to button",
+    "refs": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "functions": [
+      "BulletList",
+      "OrderedList",
+      "TaskList",
+      "TextAlignMenuButton"
+    ]
+  },
+  {
+    "hash": "3c1441f71738b386413666d6a62af1dca24ef9ab",
+    "date": "Thu Aug 15 13:15:53 2024 +0700",
+    "message": "chore: release v0.0.6",
+    "refs": "tag: v0.0.6",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.6"
+  },
+  {
+    "hash": "bad12f85368d099d976a6b5c3e205a8accbe12ea",
+    "date": "Wed Aug 14 18:04:43 2024 +0800",
+    "message": "fix: resolve nested button DOM warning",
+    "refs": "",
+    "author_name": "Condor Hero",
+    "author_email": "love2xinwei@gmail.com",
+    "functions": [
+      "FontFamilyButton",
+      "FontSizeMenuButton",
+      "HeadingButton",
+      "HistoryActionButton",
+      "LineHeightDropdown",
+      "LinkEditPopover",
+      "ActionMoreButton",
+      "CreateTablePopover",
+      "TableActionButton",
+      "TextAlignMenuButton",
+      "TextDropdown"
+    ]
+  },
+  {
+    "hash": "4e934c32e2548449f87dc630df361556ff51bf50",
+    "date": "Wed Aug 14 12:46:37 2024 +0700",
+    "message": "chore: release v0.0.5",
+    "refs": "tag: v0.0.5",
+    "body": "",
+    "author_name": "hunghg255",
+    "author_email": "giahunghust@gmail.com",
+    "version": "v0.0.5"
+  }
+]
