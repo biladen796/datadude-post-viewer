@@ -61,7 +61,7 @@
   "scripts": {
     "build:lib": "esno ./scripts/build.ts && pnpm modify-css",
     "build:lib:dev": "vite build  --mode development --watch",
-    "build:playground": "pnpm build:lib && pnpm --dir ./playground run build",
+    "build:playground": "pnpm --dir ./playground run build",
     "docs:dev": "pnpm --parallel --filter docs... dev",
     "docs:build": "pnpm --filter docs... build",
     "docs:preview": "pnpm -C docs preview",

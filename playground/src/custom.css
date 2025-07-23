@@ -2,6 +2,14 @@
   border-radius: 0px;
 }
 
+.ProseMirror {
+  .tableWrapper {
+    table {
+      min-width: 644px !important;
+    }
+  }
+}
+
 .content .tiptap.ProseMirror {
   padding: 0px !important;
   min-height: 0px !important;

@@ -18,7 +18,10 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "reactjs-tiptap-editor": "workspace:*",
+    "reactjs-tiptap-editor": "^0.3.12",
+    "easydrawer": "^0.0.15",
+    "prism-code-editor-lightweight": "^0.0.3",
+    "@excalidraw/excalidraw": "^0.18.0",
     "styled-components": "^6.1.15",
     "vite-plugin-singlefile": "^2.1.0"
   },
