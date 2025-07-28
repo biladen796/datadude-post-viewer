@@ -92,10 +92,11 @@
   }
 
   code {
+    font-family: "JetBrains Mono", monospace !important;
     border: 1px solid #e0e0e0;
     background-color: rgba(5, 21, 36, 0.06);
     padding: 0 5px;
-    @apply richtext-font-light richtext-rounded-sm richtext-shadow-lg richtext-font-mono;
+    @apply richtext-font-light richtext-rounded-sm richtext-shadow-lg !richtext-text-sm;
 
     // &::selection {
     //   @apply richtext-bg-white/30;

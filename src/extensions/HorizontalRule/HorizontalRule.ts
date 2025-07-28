@@ -1,28 +1,28 @@
-import { mergeAttributes } from "@tiptap/core";
-import type { HorizontalRuleOptions as TiptapHorizontalRuleOptions } from "@tiptap/extension-horizontal-rule";
-import { HorizontalRule as TiptapHorizontalRule } from "@tiptap/extension-horizontal-rule";
+import { mergeAttributes } from '@tiptap/core';
+import type { HorizontalRuleOptions as TiptapHorizontalRuleOptions } from '@tiptap/extension-horizontal-rule';
+import { HorizontalRule as TiptapHorizontalRule } from '@tiptap/extension-horizontal-rule';
 
-import { ActionButton } from "@/components";
-import type { GeneralOptions } from "@/types";
+import { ActionButton } from '@/components';
+import type { GeneralOptions } from '@/types';
 
 export interface HorizontalRuleOptions extends TiptapHorizontalRuleOptions, GeneralOptions<HorizontalRuleOptions> {}
 
 export const HorizontalRule = /* @__PURE__ */ TiptapHorizontalRule.extend<HorizontalRuleOptions>({
   renderHTML() {
     return [
-      "div",
+      'div',
       mergeAttributes(this.options.HTMLAttributes, {
-        "data-type": this.name,
+        'data-type': this.name,
       }),
       [
-        "div",
+        'div',
         {
-          class: "richtext-flex richtext-justify-center richtext-items-center",
-          style: "gap: 10px;",
+          class: 'richtext-flex richtext-justify-center richtext-items-center',
+          style: 'gap: 10px;',
         },
-        ["span", { class: "richtext-w-2 richtext-h-2 richtext-bg-gray-300 richtext-rounded-full" }],
-        ["span", { class: "richtext-w-2 richtext-h-2 richtext-bg-gray-300 richtext-rounded-full" }],
-        ["span", { class: "richtext-w-2 richtext-h-2 richtext-bg-gray-300 richtext-rounded-full" }],
+        ['span', { class: 'richtext-w-2 richtext-h-2 richtext-bg-gray-300 richtext-rounded-full' }],
+        ['span', { class: 'richtext-w-2 richtext-h-2 richtext-bg-gray-300 richtext-rounded-full' }],
+        ['span', { class: 'richtext-w-2 richtext-h-2 richtext-bg-gray-300 richtext-rounded-full' }],
       ],
     ];
   },
@@ -34,16 +34,16 @@ export const HorizontalRule = /* @__PURE__ */ TiptapHorizontalRule.extend<Horizo
         componentProps: {
           action: () => editor.commands.setHorizontalRule(),
           disabled: !editor.can().setHorizontalRule(),
-          icon: "Minus",
-          shortcutKeys: ["mod", "alt", "S"],
-          tooltip: t("editor.horizontalrule.tooltip"),
+          icon: 'Minus',
+          shortcutKeys: ['mod', 'alt', 'S'],
+          tooltip: t('editor.horizontalrule.tooltip'),
         },
       }),
     };
   },
   addKeyboardShortcuts() {
     return {
-      "Mod-Alt-s": () => this.editor.commands.setHorizontalRule(),
+      'Mod-Alt-s': () => this.editor.commands.setHorizontalRule(),
     };
   },
 });

@@ -11,6 +11,9 @@
       border-radius: 4px;
       position: relative;
       margin: 8px 0;
+      * {
+        font-family: "Space Mono", monospace !important;
+      }
     }
 
     .richtext-code-block-toolbar {

@@ -1,14 +1,14 @@
-import { mergeAttributes, Node } from "@tiptap/core";
-import { textblockTypeInputRule } from "@tiptap/core";
-import { ReactNodeViewRenderer } from "@tiptap/react";
+import { mergeAttributes, Node } from '@tiptap/core';
+import { textblockTypeInputRule } from '@tiptap/core';
+import { ReactNodeViewRenderer } from '@tiptap/react';
 
-import CodeBlockActiveButton from "@/extensions/CodeBlock/components/CodeBlockActiveButton";
-import { NodeViewCodeBlock } from "@/extensions/CodeBlock/components/NodeViewCodeBlock/NodeViewCodeBlock";
-import { type GeneralOptions } from "@/types";
+import CodeBlockActiveButton from '@/extensions/CodeBlock/components/CodeBlockActiveButton';
+import { NodeViewCodeBlock } from '@/extensions/CodeBlock/components/NodeViewCodeBlock/NodeViewCodeBlock';
+import { type GeneralOptions } from '@/types';
 
 export interface CodeBlockOptions extends GeneralOptions<CodeBlockOptions> {}
 
-declare module "@tiptap/core" {
+declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     setCodeBlock: {
       setCodeBlock: (options?: any) => ReturnType;
@@ -27,10 +27,10 @@ export const backtickInputRegex = /^`{3}([a-z]+)?\s$/;
 export const tildeInputRegex = /^~{3}([a-z]+)?\s$/;
 
 export const CodeBlock = /* @__PURE__ */ Node.create({
-  name: "codeBlock",
-  group: "block",
+  name: 'codeBlock',
+  group: 'block',
   atom: true,
-  content: "text*",
+  content: 'text*',
   addOptions() {
     return {
       ...this.parent?.(),
@@ -40,10 +40,10 @@ export const CodeBlock = /* @__PURE__ */ Node.create({
           component: CodeBlockActiveButton,
           componentProps: {
             action: () => editor.commands.setCodeBlock({}),
-            isActive: () => editor.isActive("codeBlock") || false,
+            isActive: () => editor.isActive('codeBlock') || false,
             disabled: false,
-            icon: "Code2",
-            tooltip: t("editor.codeblock.tooltip"),
+            icon: 'Code2',
+            tooltip: t('editor.codeblock.tooltip'),
           },
         };
       },
@@ -52,13 +52,13 @@ export const CodeBlock = /* @__PURE__ */ Node.create({
   addAttributes() {
     return {
       code: {
-        default: "",
+        default: '',
         parseHTML: (element) => {
-          return element.textContent || "";
+          return element.textContent || '';
         },
       },
       language: {
-        default: "plaintext",
+        default: 'plaintext',
       },
       lineNumbers: {
         default: true,
@@ -79,28 +79,28 @@ export const CodeBlock = /* @__PURE__ */ Node.create({
   parseHTML() {
     return [
       {
-        tag: "pre",
-        preserveWhitespace: "full",
+        tag: 'pre',
+        preserveWhitespace: 'full',
         getAttrs: (node: HTMLElement) => {
           return {
-            code: node.textContent || "",
+            code: node.textContent || '',
           };
         },
       },
       {
-        tag: "pre code",
-        preserveWhitespace: "full",
+        tag: 'pre code',
+        preserveWhitespace: 'full',
         getAttrs: (node: HTMLElement) => {
           return {
-            code: node.textContent || "",
+            code: node.textContent || '',
           };
         },
       },
     ];
   },
   renderHTML({ HTMLAttributes, node }) {
-    const code = node.attrs.code || node.content.firstChild?.text || "";
-    return ["pre", mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), ["code", {}, code]];
+    const code = node.attrs.code || node.content.firstChild?.text || '';
+    return ['pre', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), ['code', {}, code]];
   },
   addNodeView() {
     return ReactNodeViewRenderer(NodeViewCodeBlock);
@@ -109,20 +109,20 @@ export const CodeBlock = /* @__PURE__ */ Node.create({
     return {
       setCodeBlock:
         (options) =>
-        ({ commands }) => {
-          return commands.insertContent({
-            type: this.name,
-            attrs: {
-              ...options,
-              shouldFocus: true,
-            },
-          });
-        },
+          ({ commands }) => {
+            return commands.insertContent({
+              type: this.name,
+              attrs: {
+                ...options,
+                shouldFocus: true,
+              },
+            });
+          },
     };
   },
   addKeyboardShortcuts() {
     return {
-      "Mod-Alt-c": () => this.editor.commands.setCodeBlock({}),
+      'Mod-Alt-c': () => this.editor.commands.setCodeBlock({}),
     };
   },
   addInputRules() {

@@ -1,84 +1,83 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from 'react';
 
-import { NodeViewWrapper } from "@tiptap/react";
-import clsx from "clsx";
+import { NodeViewWrapper } from '@tiptap/react';
+import clsx from 'clsx';
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { IconComponent } from "@/components";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
-import "prism-code-editor-lightweight/prism/languages/bash";
-import "prism-code-editor-lightweight/prism/languages/css";
-import "prism-code-editor-lightweight/prism/languages/css-extras";
-import "prism-code-editor-lightweight/prism/languages/ini";
-import "prism-code-editor-lightweight/prism/languages/kotlin";
-import "prism-code-editor-lightweight/prism/languages/xml";
-import "prism-code-editor-lightweight/prism/languages/markup";
-import "prism-code-editor-lightweight/prism/languages/r";
-import "prism-code-editor-lightweight/prism/languages/basic";
-import "prism-code-editor-lightweight/prism/languages/vbnet";
-import "prism-code-editor-lightweight/prism/languages/c";
-import "prism-code-editor-lightweight/prism/languages/opencl";
-import "prism-code-editor-lightweight/prism/languages/diff";
-import "prism-code-editor-lightweight/prism/languages/java";
-import "prism-code-editor-lightweight/prism/languages/less";
-import "prism-code-editor-lightweight/prism/languages/objectivec";
-import "prism-code-editor-lightweight/prism/languages/ruby";
-import "prism-code-editor-lightweight/prism/languages/sql";
-import "prism-code-editor-lightweight/prism/languages/wasm";
-import "prism-code-editor-lightweight/prism/languages/cpp";
-import "prism-code-editor-lightweight/prism/languages/go";
-import "prism-code-editor-lightweight/prism/languages/javascript";
-import "prism-code-editor-lightweight/prism/languages/js-templates";
-import "prism-code-editor-lightweight/prism/languages/jsx";
-import "prism-code-editor-lightweight/prism/languages/lua";
-import "prism-code-editor-lightweight/prism/languages/perl";
-import "prism-code-editor-lightweight/prism/languages/python";
-import "prism-code-editor-lightweight/prism/languages/rust";
-import "prism-code-editor-lightweight/prism/languages/swift";
-import "prism-code-editor-lightweight/prism/languages/clike";
-import "prism-code-editor-lightweight/prism/languages/csharp";
-import "prism-code-editor-lightweight/prism/languages/graphql";
-import "prism-code-editor-lightweight/prism/languages/json";
-import "prism-code-editor-lightweight/prism/languages/makefile";
-import "prism-code-editor-lightweight/prism/languages/scss";
-import "prism-code-editor-lightweight/prism/languages/typescript";
-import "prism-code-editor-lightweight/prism/languages/tsx";
-import "prism-code-editor-lightweight/prism/languages/yaml";
-import "prism-code-editor-lightweight/prism/languages/regex";
-import "prism-code-editor-lightweight/prism/languages/php";
-import "prism-code-editor-lightweight/prism/languages/markdown";
+import 'prism-code-editor-lightweight/prism/languages/bash';
+import 'prism-code-editor-lightweight/prism/languages/css';
+import 'prism-code-editor-lightweight/prism/languages/css-extras';
+import 'prism-code-editor-lightweight/prism/languages/ini';
+import 'prism-code-editor-lightweight/prism/languages/kotlin';
+import 'prism-code-editor-lightweight/prism/languages/xml';
+import 'prism-code-editor-lightweight/prism/languages/markup';
+import 'prism-code-editor-lightweight/prism/languages/r';
+import 'prism-code-editor-lightweight/prism/languages/basic';
+import 'prism-code-editor-lightweight/prism/languages/vbnet';
+import 'prism-code-editor-lightweight/prism/languages/c';
+import 'prism-code-editor-lightweight/prism/languages/opencl';
+import 'prism-code-editor-lightweight/prism/languages/diff';
+import 'prism-code-editor-lightweight/prism/languages/java';
+import 'prism-code-editor-lightweight/prism/languages/less';
+import 'prism-code-editor-lightweight/prism/languages/objectivec';
+import 'prism-code-editor-lightweight/prism/languages/ruby';
+import 'prism-code-editor-lightweight/prism/languages/sql';
+import 'prism-code-editor-lightweight/prism/languages/wasm';
+import 'prism-code-editor-lightweight/prism/languages/cpp';
+import 'prism-code-editor-lightweight/prism/languages/go';
+import 'prism-code-editor-lightweight/prism/languages/javascript';
+import 'prism-code-editor-lightweight/prism/languages/js-templates';
+import 'prism-code-editor-lightweight/prism/languages/jsx';
+import 'prism-code-editor-lightweight/prism/languages/lua';
+import 'prism-code-editor-lightweight/prism/languages/perl';
+import 'prism-code-editor-lightweight/prism/languages/python';
+import 'prism-code-editor-lightweight/prism/languages/rust';
+import 'prism-code-editor-lightweight/prism/languages/swift';
+import 'prism-code-editor-lightweight/prism/languages/clike';
+import 'prism-code-editor-lightweight/prism/languages/csharp';
+import 'prism-code-editor-lightweight/prism/languages/graphql';
+import 'prism-code-editor-lightweight/prism/languages/json';
+import 'prism-code-editor-lightweight/prism/languages/makefile';
+import 'prism-code-editor-lightweight/prism/languages/scss';
+import 'prism-code-editor-lightweight/prism/languages/typescript';
+import 'prism-code-editor-lightweight/prism/languages/tsx';
+import 'prism-code-editor-lightweight/prism/languages/yaml';
+import 'prism-code-editor-lightweight/prism/languages/regex';
+import 'prism-code-editor-lightweight/prism/languages/php';
+import 'prism-code-editor-lightweight/prism/languages/markdown';
 
-import { createEditor, type PrismEditor } from "prism-code-editor-lightweight";
-import { defaultCommands, editHistory } from "prism-code-editor-lightweight/commands";
-import { cursorPosition } from "prism-code-editor-lightweight/cursor";
-import { indentGuides } from "prism-code-editor-lightweight/guides";
-import { highlightBracketPairs } from "prism-code-editor-lightweight/highlight-brackets";
-import { matchBrackets } from "prism-code-editor-lightweight/match-brackets";
-import { matchTags } from "prism-code-editor-lightweight/match-tags";
+import { createEditor, type PrismEditor } from 'prism-code-editor-lightweight';
+import { defaultCommands, editHistory } from 'prism-code-editor-lightweight/commands';
+import { cursorPosition } from 'prism-code-editor-lightweight/cursor';
+import { indentGuides } from 'prism-code-editor-lightweight/guides';
+import { highlightBracketPairs } from 'prism-code-editor-lightweight/highlight-brackets';
+import { matchBrackets } from 'prism-code-editor-lightweight/match-brackets';
+import { matchTags } from 'prism-code-editor-lightweight/match-tags';
 
-import { useEditableEditor } from "@/store/editableEditor";
-import { deleteNode } from "@/utils/delete-node";
+import { useEditableEditor } from '@/store/editableEditor';
+import { deleteNode } from '@/utils/delete-node';
 
-import styles from "./index.module.scss";
-import { CodeBlock } from "../../CodeBlock";
+import styles from './index.module.scss';
+import { CodeBlock } from '../../CodeBlock';
 
 const languages = [
-  { value: "plaintext", label: "plaintext" },
-  { value: "javascript", label: "JavaScript" },
-  { value: "typescript", label: "TypeScript" },
-  { value: "html", label: "HTML" },
-  { value: "css", label: "CSS" },
-  { value: "python", label: "Python" },
-  { value: "java", label: "Java" },
-  { value: "cpp", label: "C++" },
-  { value: "go", label: "Go" },
-  { value: "rust", label: "Rust" },
-  { value: "sql", label: "SQL" },
-  { value: "json", label: "JSON" },
-  { value: "yaml", label: "YAML" },
-  { value: "markdown", label: "Markdown" },
-  { value: "bash", label: "Bash" },
-  { value: "php", label: "PHP" },
+  { value: 'plaintext', label: 'plaintext' },
+  { value: 'javascript', label: 'JavaScript' },
+  { value: 'typescript', label: 'TypeScript' },
+  { value: 'html', label: 'HTML' },
+  { value: 'css', label: 'CSS' },
+  { value: 'python', label: 'Python' },
+  { value: 'java', label: 'Java' },
+  { value: 'cpp', label: 'C++' },
+  { value: 'go', label: 'Go' },
+  { value: 'rust', label: 'Rust' },
+  { value: 'sql', label: 'SQL' },
+  { value: 'json', label: 'JSON' },
+  { value: 'yaml', label: 'YAML' },
+  { value: 'markdown', label: 'Markdown' },
+  { value: 'bash', label: 'Bash' },
+  { value: 'php', label: 'PHP' },
 ];
 
 const tabSizes = [2, 4, 8];
@@ -91,17 +90,17 @@ export function NodeViewCodeBlock(props: any) {
   const deleteMe = useCallback(() => deleteNode(CodeBlock.name, props?.editor), [props?.editor]);
 
   const codeEditor = useRef<PrismEditor | null>(null);
-  const code = props.node.attrs.code || props.node.textContent || "";
+  const code = props.node.attrs.code || props.node.textContent || '';
 
   const copyCode = () => {
     if (code) {
       navigator.clipboard
         .writeText(code)
         .then(() => {
-          console.log("Copy Success");
+          console.log('Copy Success');
         })
         .catch((err) => {
-          console.error("Error:", err);
+          console.error('Error:', err);
         });
     }
   };
@@ -122,9 +121,9 @@ export function NodeViewCodeBlock(props: any) {
     const validatedAttrs = { ...attrs };
 
     if (validatedAttrs.language && !languages.some((lang) => lang.value === validatedAttrs.language)) {
-      validatedAttrs.language = "plaintext";
+      validatedAttrs.language = 'plaintext';
       props.updateAttributes({
-        language: "plaintext",
+        language: 'plaintext',
       });
     }
     return validatedAttrs;
@@ -135,7 +134,7 @@ export function NodeViewCodeBlock(props: any) {
       const attrs = validateAndUpdateLanguage(props.node.attrs);
       codeEditor.current = createEditor(containerRef.current, {
         readOnly: !props.editor.isEditable,
-        language: attrs.language || "plaintext",
+        language: attrs.language || 'plaintext',
         tabSize: attrs.tabSize ?? 2,
         lineNumbers: attrs.lineNumbers ?? true,
         wordWrap: attrs.wordWrap ?? false,
@@ -179,11 +178,11 @@ export function NodeViewCodeBlock(props: any) {
   }, [codeEditor, props.node.attrs]);
 
   return (
-    <NodeViewWrapper className={clsx(styles.wrap, "render-wrapper")}>
+    <NodeViewWrapper className={clsx(styles.wrap, 'render-wrapper')}>
       <div
         ref={containerRef}
         className={clsx(
-          "richtext-node-container richtext-hover-shadow richtext-select-outline richtext-node-code-block",
+          'richtext-node-container richtext-hover-shadow richtext-select-outline richtext-node-code-block',
           {
             [styles.blockInfoEditable]: !isEditable,
           }
