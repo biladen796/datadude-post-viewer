@@ -1,10 +1,8 @@
-// eslint-disable-next-line import/no-named-default
-import type { default as Mammoth } from 'mammoth'
+import { Extension } from '@tiptap/core';
+import type { default as Mammoth } from 'mammoth';
 
-import { Extension } from '@tiptap/core'
-import type { GeneralOptions } from '@/types'
-
-import ImportWordButton from '@/extensions/ImportWord/components/ImportWordButton'
+import ImportWordButton from '@/extensions/ImportWord/components/ImportWordButton';
+import type { GeneralOptions } from '@/types';
 
 export interface ImportWordOptions extends GeneralOptions<ImportWordOptions> {
   /** Function for converting Word files to HTML */
@@ -22,7 +20,7 @@ export interface ImportWordOptions extends GeneralOptions<ImportWordOptions> {
   mammothOptions?: Parameters<typeof Mammoth['convertToHtml']>[1]
 }
 
-export const ImportWord = Extension.create<ImportWordOptions>({
+export const ImportWord = /* @__PURE__ */ Extension.create<ImportWordOptions>({
   name: 'importWord',
   addOptions() {
     return {
@@ -31,7 +29,7 @@ export const ImportWord = Extension.create<ImportWordOptions>({
       convert: undefined,
       limit: 1024 * 1024 * 10, // 10 MB
       button: ({ editor, extension, t }) => {
-        const { convert, limit, mammothOptions } = extension.options
+        const { convert, limit, mammothOptions } = extension.options;
         return {
           component: ImportWordButton,
           componentProps: {
@@ -45,8 +43,8 @@ export const ImportWord = Extension.create<ImportWordOptions>({
             shortcutKeys: ['alt', 'mod', 'S'],
             tooltip: t('editor.importWord.tooltip'),
           },
-        }
+        };
       },
-    }
+    };
   },
-})
+});

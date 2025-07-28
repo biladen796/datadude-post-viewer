@@ -78,7 +78,7 @@ const locale = {
   'editor.image.dialog.title': '添加图片',
   'editor.image.dialog.tab.url': '链接',
   'editor.image.dialog.tab.upload': '上传',
-  'editor.link.dialog.inline': 'Inline',
+  'editor.link.dialog.inline': '行内嵌入图片',
   'editor.image.dialog.uploading': '上传中',
   'editor.image.dialog.form.link': '链接',
   'editor.image.dialog.placeholder': '链接',
@@ -166,8 +166,9 @@ const locale = {
   'editor.replace.caseSensitive': '区分大小写',
   'editor.mermaid.tooltip': 'Mermaid',
   'editor.twitter.tooltip': 'Twitter',
+  'editor.codeView.tooltip': '代码视图',
   'editor.tooltip.flipX': '水平翻转',
   'editor.tooltip.flipY': '垂直翻转',
-}
+};
 
-export default locale
+export default locale;

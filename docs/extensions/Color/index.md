@@ -15,7 +15,7 @@ The Color extension allows you to add color to your editor.
 ## Usage
 
 ```tsx
-import { Color } from 'reactjs-tiptap-editor'; // [!code ++]
+import { Color } from 'reactjs-tiptap-editor/color'; // [!code ++]
 
 const extensions = [
   ...,
@@ -45,3 +45,10 @@ Default: `undefined`
 ```js
 import { DEFAULT_COLOR } from 'reactjs-tiptap-editor'
 ```
+
+### initialDisplayedColor
+
+Type: `string`\
+Default: `undefined`
+
+The initial color to be displayed in the action button. If not provided, a default color will be used.

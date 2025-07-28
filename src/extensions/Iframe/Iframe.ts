@@ -1,14 +1,15 @@
-/* eslint-disable eqeqeq */
-import { Node, mergeAttributes, nodeInputRule } from '@tiptap/core'
-import { ReactNodeViewRenderer } from '@tiptap/react'
-import { ActionButton } from '@/components'
-import { getDatasetAttribute } from '@/utils/dom-dataset'
-import IframeNodeView from '@/extensions/Iframe/components/IframeNodeView'
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Node, mergeAttributes, nodeInputRule } from '@tiptap/core';
+import { ReactNodeViewRenderer } from '@tiptap/react';
+
+import { ActionButton } from '@/components';
+import IframeNodeView from '@/extensions/Iframe/components/IframeNodeView';
+import { getDatasetAttribute } from '@/utils/dom-dataset';
 
 export interface IIframeAttrs {
   width?: number | string
   height?: number
-  url?: string
+  src?: string
   defaultShowPicker?: boolean
 }
 
@@ -23,7 +24,7 @@ declare module '@tiptap/core' {
   }
 }
 
-export const Iframe = Node.create({
+export const Iframe = /* @__PURE__ */ Node.create({
   name: 'iframe',
   content: '',
   marks: '',
@@ -56,7 +57,7 @@ export const Iframe = Node.create({
           tooltip: t('editor.iframe.tooltip'),
         },
       }),
-    }
+    };
   },
 
   addAttributes() {
@@ -69,9 +70,9 @@ export const Iframe = Node.create({
         default: 300,
         parseHTML: getDatasetAttribute('height'),
       },
-      url: {
+      src: {
         default: null,
-        parseHTML: getDatasetAttribute('url'),
+        parseHTML: getDatasetAttribute('src'),
       },
       defaultShowPicker: {
         default: false,
@@ -83,7 +84,7 @@ export const Iframe = Node.create({
         default: this.options.allowFullscreen,
         parseHTML: () => this.options.allowFullscreen,
       },
-    }
+    };
   },
 
   parseHTML() {
@@ -91,11 +92,11 @@ export const Iframe = Node.create({
       {
         tag: 'iframe',
       },
-    ]
+    ];
   },
 
   renderHTML({ HTMLAttributes }) {
-    return ['iframe', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)]
+    return ['iframe', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)];
   },
 
   addCommands() {
@@ -105,10 +106,10 @@ export const Iframe = Node.create({
           ({ tr, commands, chain }) => {
           // @ts-ignore
             if (tr.selection?.node?.type?.name == this.name) {
-              return commands.updateAttributes(this.name, options)
+              return commands.updateAttributes(this.name, options);
             }
 
-            const attrs = options || { url: '' }
+            const attrs = options || { url: '' };
             // const { selection } = editor.state
 
             return chain()
@@ -116,9 +117,9 @@ export const Iframe = Node.create({
                 type: this.name,
                 attrs,
               })
-              .run()
+              .run();
           },
-    }
+    };
   },
 
   addInputRules() {
@@ -127,13 +128,13 @@ export const Iframe = Node.create({
         find: /^\$iframe\$$/,
         type: this.type,
         getAttributes: () => {
-          return { width: '100%' }
+          return { width: '100%' };
         },
       }),
-    ]
+    ];
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(IframeNodeView)
+    return ReactNodeViewRenderer(IframeNodeView);
   },
-})
+});

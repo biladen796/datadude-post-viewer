@@ -1,96 +1,101 @@
-import React, { useEffect, useState } from 'react'
-import deepEqual from 'deep-equal'
-import { ActionButton, Button, IconComponent, Input, Label, Popover, PopoverContent, PopoverTrigger, Switch } from '@/components'
-import { useLocale } from '@/locales'
-import { ON_SEARCH_RESULTS, SearchAndReplace } from '@/extensions/SearchAndReplace/SearchAndReplace'
+import React, { useEffect, useState } from 'react';
+
+import deepEqual from 'deep-equal';
+
+import { ActionButton, Button, IconComponent, Input, Label, Popover, PopoverContent, PopoverTrigger, Switch } from '@/components';
+import {  SearchAndReplace } from '@/extensions/SearchAndReplace/SearchAndReplace';
+import { useLocale } from '@/locales';
+import { listenEvent } from '@/utils/customEvents/customEvents';
+import { EVENTS } from '@/utils/customEvents/events.constant';
 
 function SearchAndReplaceButton({ editor, ...props }: any) {
-  const { t } = useLocale()
+  const { t } = useLocale();
 
-  const [currentIndex, setCurrentIndex] = useState(-1)
-  const [results, setResults] = useState([])
-  const [searchValue, setSearchValue] = useState('')
-  const [replaceValue, setReplaceValue] = useState('')
-  const [visible, setVisible] = useState(false)
-  const [caseSensitive, setCaseSensitive] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const [results, setResults] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
+  const [replaceValue, setReplaceValue] = useState('');
+  const [visible, setVisible] = useState(false);
+  const [caseSensitive, setCaseSensitive] = useState(false);
 
   useEffect(() => {
     if (!visible) {
-      setSearchValue('')
-      setReplaceValue('')
-      setCurrentIndex(-1)
-      setResults([])
+      setSearchValue('');
+      setReplaceValue('');
+      setCurrentIndex(-1);
+      setResults([]);
 
-      editor.commands.setSearchTerm('')
-      editor.commands.setReplaceTerm('')
+      editor.commands.setSearchTerm('');
+      editor.commands.setReplaceTerm('');
     }
-  }, [editor, visible])
+  }, [editor, visible]);
 
   useEffect(() => {
     if (!visible)
-      return
+      return;
     if (editor && editor.commands && editor.commands.setSearchTerm) {
-      editor.commands.setSearchTerm(searchValue)
+      editor.commands.setSearchTerm(searchValue);
     }
-  }, [visible, searchValue, editor])
+  }, [visible, searchValue, editor]);
 
   useEffect(() => {
     if (!visible)
-      return
+      return;
     if (editor && editor.commands && editor.commands.setReplaceTerm) {
-      editor.commands.setReplaceTerm(replaceValue)
+      editor.commands.setReplaceTerm(replaceValue);
     }
-  }, [visible, replaceValue, editor])
+  }, [visible, replaceValue, editor]);
 
   useEffect(() => {
     if (!editor)
-      return
+      return;
 
-    const searchExtension = editor.extensionManager.extensions.find((ext: any) => ext.name === SearchAndReplace.name)
+    const searchExtension = editor.extensionManager.extensions.find((ext: any) => ext.name === SearchAndReplace.name);
 
     if (!searchExtension)
-      return
+      return;
 
     const listener = () => {
       if (!visible)
-        return
+        return;
 
-      const currentIndex = searchExtension ? searchExtension.storage.currentIndex : -1
-      const results = searchExtension ? searchExtension.storage.results : []
-      setCurrentIndex(preIndex => (preIndex !== currentIndex ? currentIndex : preIndex))
-      setResults(prevResults => (deepEqual(prevResults, results) ? prevResults : results))
-    }
+      const currentIndex = searchExtension ? searchExtension.storage.currentIndex : -1;
+      const results = searchExtension ? searchExtension.storage.results : [];
+      setCurrentIndex(preIndex => (preIndex !== currentIndex ? currentIndex : preIndex));
+      setResults(prevResults => (deepEqual(prevResults, results) ? prevResults : results));
+    };
 
-    window.addEventListener(ON_SEARCH_RESULTS, listener)
+    listenEvent(EVENTS.SEARCH_REPLCE, listener);
 
     return () => {
       if (!searchExtension)
-        return
-      window.removeEventListener(ON_SEARCH_RESULTS, listener)
-    }
-  }, [visible, editor])
+        return;
+      listenEvent(EVENTS.SEARCH_REPLCE, listener);
+    };
+  }, [visible, editor]);
 
   return (
     <Popover
-      open={visible}
       onOpenChange={setVisible}
+      open={visible}
     >
       <PopoverTrigger
-        disabled={props?.disabled}
         asChild
+        disabled={props?.disabled}
       >
         <ActionButton
-          tooltip={props?.tooltip}
-          isActive={props?.isActive}
           disabled={props?.disabled}
+          isActive={props?.isActive}
+          tooltip={props?.tooltip}
         >
           <IconComponent name={props?.icon} />
         </ActionButton>
       </PopoverTrigger>
+
       <PopoverContent
-        hideWhenDetached
-        className="richtext-w-full"
         align="start"
+        className="richtext-w-full"
+        hideWhenDetached
         side="bottom"
       >
 
@@ -98,69 +103,88 @@ function SearchAndReplaceButton({ editor, ...props }: any) {
           <Label>
             {t('editor.search.dialog.text')}
           </Label>
+
           <span className="richtext-font-semibold">
-            {results.length ? `${currentIndex + 1}/${results.length}` : '0/0'}
+            {results.length > 0 ? `${currentIndex + 1}/${results.length}` : '0/0'}
           </span>
         </div>
-        <div className="richtext-flex richtext-w-full richtext-max-w-sm richtext-items-center richtext-gap-1.5 richtext-mb-[10px]">
+
+        <div className="richtext-mb-[10px] richtext-flex richtext-w-full richtext-max-w-sm richtext-items-center richtext-gap-1.5">
           <Input
-            type="text"
-            required
-            className="richtext-w-full"
-            placeholder="Text"
             autoFocus
-            value={searchValue}
+            className="richtext-w-full"
             onChange={e => setSearchValue(e.target.value)}
+            placeholder="Text"
+            required
+            type="text"
+            value={searchValue}
           />
 
-          <Button disabled={!results.length} className="richtext-flex-1" onClick={editor.commands.goToPrevSearchResult}>
+          <Button className="richtext-flex-1"
+            disabled={results.length === 0}
+            onClick={editor.commands.goToPrevSearchResult}
+          >
             <IconComponent name="ChevronUp" />
           </Button>
 
-          <Button disabled={!results.length} className="richtext-flex-1" onClick={editor.commands.goToNextSearchResult}>
+          <Button className="richtext-flex-1"
+            disabled={results.length === 0}
+            onClick={editor.commands.goToNextSearchResult}
+          >
             <IconComponent name="ChevronDown" />
           </Button>
 
         </div>
+
         <Label className="richtext-mb-[6px]">
           {t('editor.replace.dialog.text')}
         </Label>
-        <div className="richtext-flex richtext-w-full richtext-max-w-sm richtext-items-center richtext-gap-1.5 richtext-mb-[5px]">
-          <div className="richtext-relative richtext-items-center richtext-w-full richtext-max-w-sm">
+
+        <div className="richtext-mb-[5px] richtext-flex richtext-w-full richtext-max-w-sm richtext-items-center richtext-gap-1.5">
+          <div className="richtext-relative richtext-w-full richtext-max-w-sm richtext-items-center">
             <Input
-              type="text"
-              required
               className="richtext-w-80"
-              placeholder="Text"
-              value={replaceValue}
               onChange={e => setReplaceValue(e.target.value)}
+              placeholder="Text"
+              required
+              type="text"
+              value={replaceValue}
             />
           </div>
         </div>
 
-        <div className="richtext-flex richtext-items-center richtext-space-x-2 richtext-mb-[10px]">
+        <div className="richtext-mb-[10px] richtext-flex richtext-items-center richtext-space-x-2">
           <Switch
             checked={caseSensitive}
             onCheckedChange={(e: any) => {
-              setCaseSensitive(e)
-              editor.commands.setCaseSensitive(e)
+              setCaseSensitive(e);
+              editor.commands.setCaseSensitive(e);
             }}
           />
-          <Label>{t('editor.replace.caseSensitive')}</Label>
+
+          <Label>
+            {t('editor.replace.caseSensitive')}
+          </Label>
         </div>
 
         <div className="richtext-flex richtext-items-center richtext-gap-[10px]">
-          <Button disabled={!results.length} className="richtext-flex-1" onClick={editor.commands.replace}>
+          <Button className="richtext-flex-1"
+            disabled={results.length === 0}
+            onClick={editor.commands.replace}
+          >
             {t('editor.replace.dialog.text')}
           </Button>
 
-          <Button disabled={!results.length} className="richtext-flex-1" onClick={editor.commands.replaceAll}>
+          <Button className="richtext-flex-1"
+            disabled={results.length === 0}
+            onClick={editor.commands.replaceAll}
+          >
             {t('editor.replaceAll.dialog.text')}
           </Button>
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
 
-export default SearchAndReplaceButton
+export default SearchAndReplaceButton;

@@ -1,12 +1,12 @@
-import type { BoldOptions as TiptapImageOptions } from '@tiptap/extension-bold'
-import { Bold as TiptapBold } from '@tiptap/extension-bold'
+import type { BoldOptions as TiptapImageOptions } from '@tiptap/extension-bold';
+import { Bold as TiptapBold } from '@tiptap/extension-bold';
 
-import { ActionButton } from '@/components'
-import type { GeneralOptions } from '@/types'
+import { ActionButton } from '@/components';
+import type { GeneralOptions } from '@/types';
 
 export interface BoldOptions extends TiptapImageOptions, GeneralOptions<BoldOptions> {}
 
-export const Bold = TiptapBold.extend<BoldOptions>({
+export const Bold = /* @__PURE__ */ TiptapBold.extend<BoldOptions>({
   addOptions() {
     return {
       ...this.parent?.(),
@@ -15,12 +15,12 @@ export const Bold = TiptapBold.extend<BoldOptions>({
         componentProps: {
           action: () => editor.commands.toggleBold(),
           isActive: () => editor.isActive('bold') || false,
-          disabled: !editor.can().toggleBold(),
+          disabled: false,
           icon: 'Bold',
           shortcutKeys: ['mod', 'B'],
           tooltip: t('editor.bold.tooltip'),
         },
       }),
-    }
+    };
   },
-})
+});

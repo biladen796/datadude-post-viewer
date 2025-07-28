@@ -21,13 +21,6 @@
     ]
   },
   {
-    "name": "Bold.ts",
-    "package": "Bold",
-    "alias": [
-      "Bold"
-    ]
-  },
-  {
     "name": "BulletList.ts",
     "package": "BulletList",
     "alias": [
@@ -35,10 +28,10 @@
     ]
   },
   {
-    "name": "Clear.ts",
-    "package": "Clear",
+    "name": "Bold.ts",
+    "package": "Bold",
     "alias": [
-      "Clear"
+      "Bold"
     ]
   },
   {
@@ -49,6 +42,13 @@
     ]
   },
   {
+    "name": "Clear.ts",
+    "package": "Clear",
+    "alias": [
+      "Clear"
+    ]
+  },
+  {
     "name": "CodeBlock.ts",
     "package": "CodeBlock",
     "alias": [
@@ -56,17 +56,10 @@
     ]
   },
   {
-    "name": "CodeBlock.ts",
-    "package": "CodeBlock",
+    "name": "CodeView.ts",
+    "package": "CodeView",
     "alias": [
-      "highlighter"
-    ]
-  },
-  {
-    "name": "CodeBlock.ts",
-    "package": "CodeBlock",
-    "alias": [
-      "shiki-plugin"
+      "CodeView"
     ]
   },
   {
@@ -81,6 +74,13 @@
     "package": "Document",
     "alias": [
       "Document"
+    ]
+  },
+  {
+    "name": "Drawer.ts",
+    "package": "Drawer",
+    "alias": [
+      "Drawer"
     ]
   },
   {
@@ -154,13 +154,6 @@
     ]
   },
   {
-    "name": "HorizontalRule.ts",
-    "package": "HorizontalRule",
-    "alias": [
-      "HorizontalRule"
-    ]
-  },
-  {
     "name": "Iframe.ts",
     "package": "Iframe",
     "alias": [
@@ -172,6 +165,13 @@
     "package": "Iframe",
     "alias": [
       "embed"
+    ]
+  },
+  {
+    "name": "HorizontalRule.ts",
+    "package": "HorizontalRule",
+    "alias": [
+      "HorizontalRule"
     ]
   },
   {
@@ -203,17 +203,17 @@
     ]
   },
   {
-    "name": "Indent.ts",
-    "package": "Indent",
-    "alias": [
-      "Indent"
-    ]
-  },
-  {
     "name": "Italic.ts",
     "package": "Italic",
     "alias": [
       "Italic"
+    ]
+  },
+  {
+    "name": "Indent.ts",
+    "package": "Indent",
+    "alias": [
+      "Indent"
     ]
   },
   {
@@ -266,6 +266,13 @@
     ]
   },
   {
+    "name": "OrderedList.ts",
+    "package": "OrderedList",
+    "alias": [
+      "OrderedList"
+    ]
+  },
+  {
     "name": "MultiColumn.ts",
     "package": "MultiColumn",
     "alias": [
@@ -280,13 +287,6 @@
     ]
   },
   {
-    "name": "OrderedList.ts",
-    "package": "OrderedList",
-    "alias": [
-      "OrderedList"
-    ]
-  },
-  {
     "name": "SearchAndReplace.ts",
     "package": "SearchAndReplace",
     "alias": [
@@ -298,13 +298,6 @@
     "package": "Selection",
     "alias": [
       "Selection"
-    ]
-  },
-  {
-    "name": "Strike.ts",
-    "package": "Strike",
-    "alias": [
-      "Strike"
     ]
   },
   {
@@ -329,10 +322,17 @@
     ]
   },
   {
-    "name": "Subscript.ts",
-    "package": "Subscript",
+    "name": "Strike.ts",
+    "package": "Strike",
     "alias": [
-      "Subscript"
+      "Strike"
+    ]
+  },
+  {
+    "name": "SubAndSuperScript.ts",
+    "package": "SubAndSuperScript",
+    "alias": [
+      "SubAndSuperScript"
     ]
   },
   {
@@ -350,17 +350,17 @@
     ]
   },
   {
-    "name": "TaskList.ts",
-    "package": "TaskList",
-    "alias": [
-      "TaskList"
-    ]
-  },
-  {
     "name": "TableOfContent.ts",
     "package": "TableOfContent",
     "alias": [
       "TableOfContent"
+    ]
+  },
+  {
+    "name": "TaskList.ts",
+    "package": "TaskList",
+    "alias": [
+      "TaskList"
     ]
   },
   {
@@ -385,6 +385,13 @@
     ]
   },
   {
+    "name": "TextUnderline.ts",
+    "package": "TextUnderline",
+    "alias": [
+      "TextUnderline"
+    ]
+  },
+  {
     "name": "TrailingNode.ts",
     "package": "TrailingNode",
     "alias": [
@@ -396,13 +403,6 @@
     "package": "Twitter",
     "alias": [
       "Twitter"
-    ]
-  },
-  {
-    "name": "UnderLine.ts",
-    "package": "UnderLine",
-    "alias": [
-      "Underline"
     ]
   },
   {
@@ -427,8 +427,22 @@
     ]
   },
   {
-    "name": "Emoji.ts",
-    "package": "Emoji",
+    "name": "Table.ts",
+    "package": "Table",
+    "alias": [
+      "components"
+    ]
+  },
+  {
+    "name": "Table.ts",
+    "package": "Table",
+    "alias": [
+      "components"
+    ]
+  },
+  {
+    "name": "Attachment.ts",
+    "package": "Attachment",
     "alias": [
       "components"
     ]

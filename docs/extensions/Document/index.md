@@ -15,7 +15,7 @@ The Document extension allows you to add a document to your editor.
 ## Usage
 
 ```tsx
-import { Document } from 'reactjs-tiptap-editor'; // [!code ++]
+import { Document } from 'reactjs-tiptap-editor/document'; // [!code ++]
 
 const extensions = [
   ...,

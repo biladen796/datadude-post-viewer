@@ -13,7 +13,7 @@ next:
 ## Usage
 
 ```tsx
-import { ExportWord } from 'reactjs-tiptap-editor'; // [!code ++]
+import { ExportWord } from 'reactjs-tiptap-editor/exportword'; // [!code ++]
 
 const extensions = [
   ...,

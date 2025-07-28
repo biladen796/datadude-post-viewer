@@ -15,7 +15,7 @@ next:
 ## Usage
 
 ```tsx
-import { Table } from 'reactjs-tiptap-editor'; // [!code ++]
+import { Table } from 'reactjs-tiptap-editor/table'; // [!code ++]
 
 const extensions = [
   ...,

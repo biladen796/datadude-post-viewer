@@ -10,7 +10,7 @@
       @apply richtext-backdrop-blur-sm richtext-bg-white/30;
 
       &:before {
-        content: '';
+        content: "";
         box-sizing: border-box;
         position: absolute;
         top: 50%;
@@ -35,7 +35,7 @@
           @apply richtext-bottom-[-2px] richtext-absolute richtext-right-[-2px] richtext-top-0 richtext-w-1 richtext-z-10 richtext-pointer-events-none richtext-bg-primary;
         }
         .resize-cursor {
-          cursor: 'col-resize';
+          cursor: "col-resize";
         }
 
         .selectedCell {
@@ -45,7 +45,7 @@
       }
     }
 
-    [data-type='horizontalRule'] {
+    [data-type="horizontalRule"] {
       @apply richtext-transition-all richtext-duration-100 richtext-ease-in-out richtext-cursor-pointer;
 
       &.ProseMirror-selectednode {
@@ -124,6 +124,8 @@
         clear: both;
         outline: transparent solid 2px;
         transition: all 0.2s ease-in;
+        border-radius: 8px;
+        overflow: hidden;
 
         &__button-wrap {
           display: none;
@@ -177,10 +179,10 @@
       img {
         display: inline;
         vertical-align: baseline;
+        border-radius: 8px;
+        overflow: hidden;
       }
     }
-
-
 
     .image-resizer {
       position: absolute;
@@ -191,7 +193,6 @@
       height: 100%;
       @apply richtext-border !important;
       @apply richtext-border-border !important;
-
 
       &__handler {
         position: absolute;
@@ -243,17 +244,16 @@
     }
   }
 
-  .ProseMirror[contenteditable='true'].resize-cursor {
+  .ProseMirror[contenteditable="true"].resize-cursor {
     cursor: col-resize;
   }
-
 }
 
 .slash-command-active.slash-command-active {
   background-color: hsl(var(--accent)) !important;
 }
 
-[data-dui-1-3-5~='dui-tooltip-wrapper'] {
+[data-dui-1-3-5~="dui-tooltip-wrapper"] {
   display: inline-block;
   position: relative;
 }

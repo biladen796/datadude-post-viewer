@@ -1,14 +1,15 @@
-import type { HighlightOptions as TiptapHighlightOptions } from '@tiptap/extension-highlight'
-import { Highlight as TiptapHighlight } from '@tiptap/extension-highlight'
+import type { HighlightOptions as TiptapHighlightOptions } from '@tiptap/extension-highlight';
+import { Highlight as TiptapHighlight } from '@tiptap/extension-highlight';
 
-import HighlightActionButton from './components/HighlightActionButton'
-import type { GeneralOptions } from '@/types'
+import type { GeneralOptions } from '@/types';
+
+import HighlightActionButton from './components/HighlightActionButton';
 
 export interface HighlightOptions
   extends TiptapHighlightOptions,
   GeneralOptions<HighlightOptions> {}
 
-export const Highlight = TiptapHighlight.extend<HighlightOptions>({
+export const Highlight = /* @__PURE__ */ TiptapHighlight.extend<HighlightOptions>({
   addOptions() {
     return {
       ...this.parent?.(),
@@ -18,19 +19,19 @@ export const Highlight = TiptapHighlight.extend<HighlightOptions>({
         componentProps: {
           action: (color?: unknown) => {
             if (typeof color === 'string') {
-              editor.chain().focus().setHighlight({ color }).run()
+              editor.chain().focus().setHighlight({ color }).run();
             }
             if (color === undefined) {
-              editor.chain().focus().unsetHighlight().run()
+              editor.chain().focus().unsetHighlight().run();
             }
           },
           editor,
           isActive: () => editor.isActive('highlight') || false,
-          disabled: !editor.can().setHighlight(),
+          disabled: false,
           shortcutKeys: ['⇧', 'mod', 'H'],
           tooltip: t('editor.highlight.tooltip'),
         },
       }),
-    }
+    };
   },
-})
+});

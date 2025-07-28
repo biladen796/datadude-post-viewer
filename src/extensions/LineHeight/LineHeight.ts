@@ -1,10 +1,14 @@
-import { Extension } from '@tiptap/core'
-import type { Editor } from '@tiptap/core'
+import { Extension } from '@tiptap/core';
+import type { Editor } from '@tiptap/core';
 
-import { DEFAULT_LINE_HEIGHT, DEFAULT_LINE_HEIGHT_LIST } from '@/constants'
-import LineHeightDropdown from '@/extensions/LineHeight/components/LineHeightDropdown'
-import type { GeneralOptions } from '@/types'
-import { createLineHeightCommand } from '@/utils/line-height'
+import { DEFAULT_LINE_HEIGHT, DEFAULT_LINE_HEIGHT_LIST } from '@/constants';
+import LineHeightDropdown from '@/extensions/LineHeight/components/LineHeightDropdown';
+import type { GeneralOptions } from '@/types';
+import { createLineHeightCommand } from '@/utils/line-height';
+
+export {
+  DEFAULT_LINE_HEIGHT_LIST
+};
 
 export interface LineHeightOptions extends GeneralOptions<LineHeightOptions> {
   types: string[]
@@ -21,7 +25,7 @@ declare module '@tiptap/core' {
   }
 }
 
-export const LineHeight = Extension.create<LineHeightOptions>({
+export const LineHeight = /* @__PURE__ */ Extension.create<LineHeightOptions>({
   name: 'lineHeight',
   addOptions() {
     return {
@@ -36,9 +40,9 @@ export const LineHeight = Extension.create<LineHeightOptions>({
             editor,
             tooltip: t('editor.lineheight.tooltip'),
           },
-        }
+        };
       },
-    }
+    };
   },
 
   addGlobalAttributes() {
@@ -49,18 +53,18 @@ export const LineHeight = Extension.create<LineHeightOptions>({
           lineHeight: {
             default: null,
             parseHTML: (element) => {
-              return element.style.lineHeight || this.options.defaultHeight
+              return element.style.lineHeight || this.options.defaultHeight;
             },
             renderHTML: (attributes) => {
               if (attributes.lineHeight === this.options.defaultHeight || !attributes.lineHeight) {
-                return {}
+                return {};
               }
-              return { style: `line-height: ${attributes.lineHeight}` }
+              return { style: `line-height: ${attributes.lineHeight}` };
             },
           },
         },
       },
-    ]
+    ];
   },
 
   addCommands() {
@@ -69,8 +73,8 @@ export const LineHeight = Extension.create<LineHeightOptions>({
       unsetLineHeight:
         () =>
           ({ commands }) => {
-            return this.options.types.every(type => commands.resetAttributes(type, 'lineHeight'))
+            return this.options.types.every(type => commands.resetAttributes(type, 'lineHeight'));
           },
-    }
+    };
   },
-})
+});

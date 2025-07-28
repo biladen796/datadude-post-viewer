@@ -1,13 +1,15 @@
-import { createSignal, useSignalValue } from 'reactjs-signal'
-
-const dialogImage = createSignal(false)
+import { useStoreUploadImage } from '@/store/store';
+import { dispatchEvent } from '@/utils/customEvents/customEvents';
+import { EVENTS } from '@/utils/customEvents/events.constant';
 
 export function useDialogImage() {
-  return useSignalValue(dialogImage)
+  const [v] = useStoreUploadImage(store => store.value);
+
+  return v;
 }
 
 export const actionDialogImage = {
-  setOpen: (value: boolean) => {
-    dialogImage.set(value)
+  setOpen: (id: any, value: boolean) => {
+    dispatchEvent(EVENTS.UPLOAD_IMAGE(id), value);
   },
-}
+};

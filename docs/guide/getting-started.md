@@ -6,28 +6,50 @@ next:
   link: /guide/toolbar.md
 ---
 
-# Installation
+# Installation React 19
 
 ::: code-group
 
 ```sh [npm]
-npm install reactjs-tiptap-editor
+npm install reactjs-tiptap-editor@latest
 ```
 
 ```sh [pnpm]
-pnpm install reactjs-tiptap-editor
+pnpm install reactjs-tiptap-editor@latest
 ```
 
 ```sh [yarn]
-yarn add reactjs-tiptap-editor
+yarn add reactjs-tiptap-editor@latest
 ```
 
 :::
 
+## Install React version less than 18.0.0
+
+::: code-group
+
+```sh [npm]
+npm install reactjs-tiptap-editor@0.1.16
+```
+```
+
+```sh [pnpm]
+pnpm install reactjs-tiptap-editor@0.1.16
+```
+
+```sh [yarn]
+yarn add reactjs-tiptap-editor@0.1.16
+```
+
+:::
+
+
 ## Usage
 
 ```tsx
-import RichTextEditor, { BaseKit } from 'reactjs-tiptap-editor';
+import RichTextEditor from 'reactjs-tiptap-editor';
+import { BaseKit } from 'reactjs-tiptap-editor';
+// import { BaseKit } from 'reactjs-tiptap-editor/extension-bundle'; // for version 0.1.16 and lower
 
 // Import CSS
 import 'reactjs-tiptap-editor/style.css';
@@ -66,14 +88,6 @@ const App = () => {
     />
   );
 };
-```
-
-## Import full bundle
-
-- There are error when install by yarn, you can import full bundle by using `bundle/full` path
-
-```tsx
-import RichTextEditor from 'reactjs-tiptap-editor/bundle/full'
 ```
 
 ## Props

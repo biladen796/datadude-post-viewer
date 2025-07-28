@@ -1,6 +1,6 @@
-import { Node, mergeAttributes } from '@tiptap/core'
+import { Node, mergeAttributes } from '@tiptap/core';
 
-export const Column = Node.create({
+export const Column = /* @__PURE__ */ Node.create({
   name: 'column',
   content: 'block+',
   isolating: true,
@@ -10,7 +10,7 @@ export const Column = Node.create({
       HTMLAttributes: {
         class: 'column',
       },
-    }
+    };
   },
 
   addAttributes() {
@@ -19,7 +19,7 @@ export const Column = Node.create({
         default: 0,
         parseHTML: element => element.getAttribute('index'),
       },
-    }
+    };
   },
 
   parseHTML() {
@@ -27,10 +27,10 @@ export const Column = Node.create({
       {
         tag: 'div[class=column]',
       },
-    ]
+    ];
   },
 
   renderHTML({ HTMLAttributes }) {
-    return ['div', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0]
+    return ['div', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
   },
-})
+});

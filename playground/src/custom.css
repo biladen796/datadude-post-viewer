@@ -17,3 +17,7 @@
 .richtext-flex.richtext-items-center.richtext-justify-between.richtext-p-3.richtext-border-t {
   display: none;
 }
+
+.ProseMirror-trailingBreak {
+  display: none;
+}

@@ -1,22 +1,26 @@
-import * as path from 'node:path'
+import * as path from "node:path";
 
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import checker from 'vite-plugin-checker'
-import EnvironmentPlugin from 'vite-plugin-environment'
-import { viteSingleFile } from 'vite-plugin-singlefile'
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import checker from "vite-plugin-checker";
+import EnvironmentPlugin from "vite-plugin-environment";
+import { viteSingleFile } from "vite-plugin-singlefile";
 
-delete process.env['CommonProgramFiles(x86)']
-delete process.env['ProgramFiles(x86)']
+delete process.env["CommonProgramFiles(x86)"];
+delete process.env["ProgramFiles(x86)"];
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const isDev = mode !== 'production'
-  const isAnalyze = mode === 'analyze'
+  const isDev = mode !== "production";
+  const isAnalyze = mode === "analyze";
 
   return {
+    define: {
+      "process.env": {},
+    },
     plugins: [
       react(),
-      EnvironmentPlugin('all'),
+      EnvironmentPlugin("all"),
       //  resolve({ "react-codemirror2": `
       //       const UnControlled = {};
       //       export {
@@ -32,7 +36,7 @@ export default defineConfig(({ mode }) => {
       // }),
     ],
     optimizeDeps: {
-      include: ['react'],
+      include: ["react"],
     },
     css: {
       devSourcemap: isDev,
@@ -42,11 +46,11 @@ export default defineConfig(({ mode }) => {
         include: [/node_modules/],
       },
       sourcemap: isAnalyze,
-      outDir: 'webview',
+      outDir: "webview",
       emptyOutDir: false,
     },
     resolve: {
-      alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
+      alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
     },
     esbuild: {
       sourcemap: isDev,
@@ -57,5 +61,5 @@ export default defineConfig(({ mode }) => {
     preview: {
       port: 8000,
     },
-  }
-})
+  };
+});

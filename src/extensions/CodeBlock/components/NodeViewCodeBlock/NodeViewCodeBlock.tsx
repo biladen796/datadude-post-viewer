@@ -1,85 +1,308 @@
-/* eslint-disable unicorn/prefer-dom-node-text-content */
+import React, { useCallback, useEffect, useRef } from "react";
 
-import React, { useCallback, useMemo, useRef } from 'react'
+import { NodeViewWrapper } from "@tiptap/react";
+import clsx from "clsx";
 
-import { NodeViewContent, NodeViewWrapper } from '@tiptap/react'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { IconComponent } from "@/components";
 
-import { Copy, CopyCheck } from 'lucide-react'
-import clsx from 'clsx'
-import styles from './index.module.scss'
-import { CodeBlock } from '@/extensions'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import useCopy from '@/hooks/useCopy'
-import { deleteNode } from '@/utils/delete-node'
-import { DEFAULT_LANGUAGE_CODE_BLOCK } from '@/constants'
-import { IconComponent } from '@/components'
-import { useEditableEditor } from '@/store/editableEditor'
+import "prism-code-editor-lightweight/prism/languages/bash";
+import "prism-code-editor-lightweight/prism/languages/css";
+import "prism-code-editor-lightweight/prism/languages/css-extras";
+import "prism-code-editor-lightweight/prism/languages/ini";
+import "prism-code-editor-lightweight/prism/languages/kotlin";
+import "prism-code-editor-lightweight/prism/languages/xml";
+import "prism-code-editor-lightweight/prism/languages/markup";
+import "prism-code-editor-lightweight/prism/languages/r";
+import "prism-code-editor-lightweight/prism/languages/basic";
+import "prism-code-editor-lightweight/prism/languages/vbnet";
+import "prism-code-editor-lightweight/prism/languages/c";
+import "prism-code-editor-lightweight/prism/languages/opencl";
+import "prism-code-editor-lightweight/prism/languages/diff";
+import "prism-code-editor-lightweight/prism/languages/java";
+import "prism-code-editor-lightweight/prism/languages/less";
+import "prism-code-editor-lightweight/prism/languages/objectivec";
+import "prism-code-editor-lightweight/prism/languages/ruby";
+import "prism-code-editor-lightweight/prism/languages/sql";
+import "prism-code-editor-lightweight/prism/languages/wasm";
+import "prism-code-editor-lightweight/prism/languages/cpp";
+import "prism-code-editor-lightweight/prism/languages/go";
+import "prism-code-editor-lightweight/prism/languages/javascript";
+import "prism-code-editor-lightweight/prism/languages/js-templates";
+import "prism-code-editor-lightweight/prism/languages/jsx";
+import "prism-code-editor-lightweight/prism/languages/lua";
+import "prism-code-editor-lightweight/prism/languages/perl";
+import "prism-code-editor-lightweight/prism/languages/python";
+import "prism-code-editor-lightweight/prism/languages/rust";
+import "prism-code-editor-lightweight/prism/languages/swift";
+import "prism-code-editor-lightweight/prism/languages/clike";
+import "prism-code-editor-lightweight/prism/languages/csharp";
+import "prism-code-editor-lightweight/prism/languages/graphql";
+import "prism-code-editor-lightweight/prism/languages/json";
+import "prism-code-editor-lightweight/prism/languages/makefile";
+import "prism-code-editor-lightweight/prism/languages/scss";
+import "prism-code-editor-lightweight/prism/languages/typescript";
+import "prism-code-editor-lightweight/prism/languages/tsx";
+import "prism-code-editor-lightweight/prism/languages/yaml";
+import "prism-code-editor-lightweight/prism/languages/regex";
+import "prism-code-editor-lightweight/prism/languages/php";
+import "prism-code-editor-lightweight/prism/languages/markdown";
 
-export function NodeViewCodeBlock({ editor, node: { attrs }, updateAttributes, extension }: any) {
-  const { isCopied, copyToClipboard } = useCopy()
+import { createEditor, type PrismEditor } from "prism-code-editor-lightweight";
+import { defaultCommands, editHistory } from "prism-code-editor-lightweight/commands";
+import { cursorPosition } from "prism-code-editor-lightweight/cursor";
+import { indentGuides } from "prism-code-editor-lightweight/guides";
+import { highlightBracketPairs } from "prism-code-editor-lightweight/highlight-brackets";
+import { matchBrackets } from "prism-code-editor-lightweight/match-brackets";
+import { matchTags } from "prism-code-editor-lightweight/match-tags";
 
-  const listLang = useMemo(() => {
-    return extension.options.languages?.length ? extension.options.languages : DEFAULT_LANGUAGE_CODE_BLOCK
-  }, [extension.options.languages])
+import { useEditableEditor } from "@/store/editableEditor";
+import { deleteNode } from "@/utils/delete-node";
 
-  const isEditable = useEditableEditor()
+import styles from "./index.module.scss";
+import { CodeBlock } from "../../CodeBlock";
 
-  const isPrint = editor?.options?.editorProps?.print
-  const { language: defaultLanguage } = attrs
-  const $container: any = useRef<HTMLPreElement>()
+const languages = [
+  { value: "plaintext", label: "plaintext" },
+  { value: "javascript", label: "JavaScript" },
+  { value: "typescript", label: "TypeScript" },
+  { value: "html", label: "HTML" },
+  { value: "css", label: "CSS" },
+  { value: "python", label: "Python" },
+  { value: "java", label: "Java" },
+  { value: "cpp", label: "C++" },
+  { value: "go", label: "Go" },
+  { value: "rust", label: "Rust" },
+  { value: "sql", label: "SQL" },
+  { value: "json", label: "JSON" },
+  { value: "yaml", label: "YAML" },
+  { value: "markdown", label: "Markdown" },
+  { value: "bash", label: "Bash" },
+  { value: "php", label: "PHP" },
+];
 
-  const deleteMe = useCallback(() => deleteNode(CodeBlock.name, editor), [editor])
+const tabSizes = [2, 4, 8];
+
+export function NodeViewCodeBlock(props: any) {
+  const isEditable = useEditableEditor();
+
+  const containerRef: any = useRef<HTMLPreElement>(null);
+
+  const deleteMe = useCallback(() => deleteNode(CodeBlock.name, props?.editor), [props?.editor]);
+
+  const codeEditor = useRef<PrismEditor | null>(null);
+  const code = props.node.attrs.code || props.node.textContent || "";
+
+  const copyCode = () => {
+    if (code) {
+      navigator.clipboard
+        .writeText(code)
+        .then(() => {
+          console.log("Copy Success");
+        })
+        .catch((err) => {
+          console.error("Error:", err);
+        });
+    }
+  };
+
+  const toggleLineNumbers = () => {
+    props.updateAttributes({
+      lineNumbers: !props.node.attrs.lineNumbers,
+    });
+  };
+
+  const toggleWordWrap = () => {
+    props.updateAttributes({
+      wordWrap: !props.node.attrs.wordWrap,
+    });
+  };
+
+  const validateAndUpdateLanguage = (attrs: any) => {
+    const validatedAttrs = { ...attrs };
+
+    if (validatedAttrs.language && !languages.some((lang) => lang.value === validatedAttrs.language)) {
+      validatedAttrs.language = "plaintext";
+      props.updateAttributes({
+        language: "plaintext",
+      });
+    }
+    return validatedAttrs;
+  };
+
+  useEffect(() => {
+    if (containerRef.current) {
+      const attrs = validateAndUpdateLanguage(props.node.attrs);
+      codeEditor.current = createEditor(containerRef.current, {
+        readOnly: !props.editor.isEditable,
+        language: attrs.language || "plaintext",
+        tabSize: attrs.tabSize ?? 2,
+        lineNumbers: attrs.lineNumbers ?? true,
+        wordWrap: attrs.wordWrap ?? false,
+        value: code,
+        rtl: false,
+        onUpdate(value) {
+          props.updateAttributes({ code: value });
+        },
+      });
+      codeEditor.current.addExtensions(
+        matchBrackets(),
+        matchTags(),
+        indentGuides(),
+        highlightBracketPairs(),
+        cursorPosition(),
+        defaultCommands(),
+        editHistory()
+      );
+
+      if (props.node.attrs.shouldFocus) {
+        setTimeout(() => {
+          codeEditor.current?.textarea.focus();
+          props.updateAttributes({
+            shouldFocus: false,
+          });
+        }, 0);
+      }
+    }
+
+    return () => {
+      if (codeEditor.current?.remove) codeEditor.current?.remove();
+    };
+  }, [containerRef]);
+
+  useEffect(() => {
+    if (codeEditor.current?.setOptions) {
+      const attrs = validateAndUpdateLanguage(props.node.attrs);
+
+      codeEditor.current?.setOptions(attrs);
+    }
+  }, [codeEditor, props.node.attrs]);
 
   return (
-    <NodeViewWrapper className={clsx(styles.wrap, !isPrint && styles.maxHeight, 'render-wrapper')}>
+    <NodeViewWrapper className={clsx(styles.wrap, "render-wrapper")}>
+      <div
+        ref={containerRef}
+        className={clsx(
+          "richtext-node-container richtext-hover-shadow richtext-select-outline richtext-node-code-block",
+          {
+            [styles.blockInfoEditable]: !isEditable,
+          }
+        )}>
+        <div className="richtext-code-block-toolbar">
+          <div>
+            <Select
+              defaultValue={props.node.attrs.language}
+              disabled={!isEditable}
+              onValueChange={(value) => {
+                props.updateAttributes({
+                  language: value,
+                });
+              }}>
+              <SelectTrigger className="richtext-h-7 richtext-w-[160px] richtext-border-none richtext-text-sm richtext-outline-none hover:richtext-bg-[#5a5d5e4f]">
+                <SelectValue placeholder="Select language" />
+              </SelectTrigger>
 
-      <div className={clsx(styles.blockInfo, {
-        [styles.blockInfoEditable]: !isEditable,
-      })}
+              <SelectContent
+                className="richtext-border-[#3a3f4b] richtext-bg-[#21252b] richtext-text-[#ccc]"
+                onCloseAutoFocus={(e) => e.preventDefault()}>
+                {languages?.map((lang) => {
+                  return (
+                    <SelectItem key={lang.value} value={lang.value}>
+                      {lang.label}
+                    </SelectItem>
+                  );
+                })}
+              </SelectContent>
+            </Select>
+          </div>
+          {/* 
+          <div className="toolbar-divider"></div>
 
-      >
-        <span
-          onClick={() => copyToClipboard($container.current.innerText)}
-          className={clsx(styles.btnCopy, isCopied && styles.copied)}
-        >
-          {!isCopied ? <Copy size={16} /> : <CopyCheck size={16} />}
-        </span>
+          <div
+            className="richtext-flex richtext-size-7 richtext-cursor-pointer richtext-items-center richtext-justify-center richtext-rounded-sm hover:richtext-bg-[#5a5d5e4f]"
+            onClick={copyCode}>
+            <IconComponent className="richtext-size-4" name="Copy"></IconComponent>
+          </div> */}
 
-        <span
-          onClick={deleteMe}
-          className={styles.btnDelete}
-        >
-          <IconComponent
-            name="Trash2"
-          />
-        </span>
+          {/* <div className="toolbar-divider"></div>
 
-        <div className={styles.selectLang}>
-          <Select
-            defaultValue={defaultLanguage || 'auto'}
-            disabled={!isEditable}
-            onValueChange={value => updateAttributes({ language: value })}
+          <div
+            onClick={toggleLineNumbers}
+            className={clsx('richtext-flex richtext-size-7 richtext-cursor-pointer richtext-items-center richtext-justify-center richtext-rounded-sm hover:richtext-bg-[#5a5d5e4f]', {
+              'richtext-bg-[#5a5d5e4f]': props?.node.attrs.lineNumbers
+            })}
           >
-            <SelectTrigger>
-              <SelectValue placeholder="Language" />
-            </SelectTrigger>
-            <SelectContent className="richtext-max-h-60 richtext-overflow-y-auto">
-              <SelectItem value="auto">Auto</SelectItem>
+            <IconComponent className="richtext-size-4"
+              name="List"
+            >
+            </IconComponent>
+          </div>
 
-              {listLang.map((lang: any, index: any) => (
-                <SelectItem key={`code-lang-${index}`} value={lang}>
-                  {lang.charAt(0).toUpperCase() + lang.slice(1)}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className="toolbar-divider"></div>
+
+          <div
+            onClick={toggleWordWrap}
+            className={clsx('richtext-flex richtext-size-7 richtext-cursor-pointer richtext-items-center richtext-justify-center richtext-rounded-sm hover:richtext-bg-[#5a5d5e4f]', {
+              'richtext-bg-[#5a5d5e4f]': props?.node.attrs.wordWrap
+            })}
+          >
+            <IconComponent className="richtext-size-4"
+              name="WrapText"
+            >
+            </IconComponent>
+          </div>
+
+          <div className="toolbar-divider"></div>
+
+          <div>
+            <Select
+              defaultValue={props.node.attrs.tabSize}
+              disabled={!isEditable}
+              onValueChange={(value) => {
+                props.updateAttributes({
+                  tabSize: value,
+                });
+              }}
+            >
+              <SelectTrigger className="richtext-h-7 richtext-w-[60px] richtext-border-none richtext-text-sm richtext-outline-none hover:richtext-bg-[#5a5d5e4f]">
+                <IconComponent className="richtext-size-4"
+                  name="IndentIncrease"
+                />
+              </SelectTrigger>
+
+              <SelectContent
+                className="richtext-border-[#3a3f4b] richtext-bg-[#21252b] richtext-text-[#ccc]"
+                onCloseAutoFocus={(e) => e.preventDefault()}
+              >
+                {
+                  tabSizes?.map((size) => {
+                    return (
+                      <SelectItem
+                        key={size}
+                        value={size as any}
+                      >
+                        {size}
+                      </SelectItem>
+                    );
+                  })
+                }
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="toolbar-divider"></div>
+
+          <div
+            className="richtext-flex richtext-size-7 richtext-cursor-pointer richtext-items-center richtext-justify-center richtext-rounded-sm hover:richtext-bg-[#5a5d5e4f]"
+            onClick={deleteMe}
+          >
+            <IconComponent className="richtext-size-4"
+              name="Trash2"
+            >
+            </IconComponent>
+          </div> */}
         </div>
-
       </div>
-
-      <pre ref={$container}>
-        <NodeViewContent as="code" />
-      </pre>
     </NodeViewWrapper>
-  )
+  );
 }

@@ -1,12 +1,12 @@
-import type { CodeOptions as TiptapCodeOptions } from '@tiptap/extension-code'
-import { Code as TiptapCode } from '@tiptap/extension-code'
+import type { CodeOptions as TiptapCodeOptions } from '@tiptap/extension-code';
+import { Code as TiptapCode } from '@tiptap/extension-code';
 
-import { ActionButton } from '@/components'
-import type { GeneralOptions } from '@/types'
+import { ActionButton } from '@/components';
+import type { GeneralOptions } from '@/types';
 
 export interface CodeOptions extends TiptapCodeOptions, GeneralOptions<CodeOptions> {}
 
-export const Code = TiptapCode.extend<CodeOptions>({
+export const Code = /* @__PURE__ */ TiptapCode.extend<CodeOptions>({
   addOptions() {
     return {
       ...this.parent?.(),
@@ -21,6 +21,6 @@ export const Code = TiptapCode.extend<CodeOptions>({
           tooltip: t('editor.code.tooltip'),
         },
       }),
-    }
+    };
   },
-})
+});

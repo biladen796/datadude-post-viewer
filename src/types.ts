@@ -1,7 +1,9 @@
-import type { Editor as CoreEditor, Extension, JSONContent } from '@tiptap/core'
-import type { Editor } from '@tiptap/react'
+import type { Editor as CoreEditor, Extension, JSONContent } from '@tiptap/core';
+import type { Editor } from '@tiptap/react';
 
-export type { Editor, JSONContent } from '@tiptap/core'
+import { type ActionButtonProps } from './components';
+
+export type { Editor, JSONContent } from '@tiptap/core';
 
 /**
  * Represents the onChange event for EchoEditor.
@@ -39,6 +41,11 @@ export type ExtensionNameKeys =
   | 'codeBlock'
   | 'clear'
   | 'history'
+  | 'twitter'
+  | 'katex'
+  | 'excalidraw'
+  | 'mermaid'
+  | 'drawer';
 
 /**
  * Represents the general options for Tiptap extensions.
@@ -105,9 +112,7 @@ export interface ButtonViewParams<T = any> {
 /**
  * Represents the ButtonView function.
  */
-export interface ButtonView<T = any> {
-  (options: ButtonViewParams<T>): ButtonViewReturn | ButtonViewReturn[]
-}
+export type ButtonView<T = any> = (options: ButtonViewParams<T>) => ButtonViewReturn | ButtonViewReturn[];
 
 /**
  * Represents the BubbleMenuRenderProps.
@@ -116,6 +121,20 @@ export interface BubbleMenuRenderProps {
   editor: Editor
   disabled: boolean
   bubbleMenu: BubbleMenuProps
+  extensionsNames: string[]
+}
+
+export interface BubbleMenuConfig {
+  /**
+     * @description Column menu hidden
+     * @default false
+     */
+  hidden?: boolean
+  /**
+   * custom menu actions
+   */
+  actions?: ActionButtonProps[]
+
 }
 
 /**
@@ -129,13 +148,7 @@ export interface BubbleMenuProps {
      */
     hidden?: boolean
   }
-  tableConfig?: {
-    /**
-     * @description Table menu hidden
-     * @default false
-     */
-    hidden?: boolean
-  }
+  tableConfig?: BubbleMenuConfig
   floatingMenuConfig?: {
     /**
      * @description Floating menu hidden
@@ -213,6 +226,13 @@ export interface BubbleMenuProps {
      */
     hidden?: boolean
   }
+  drawerConfig?: {
+    /**
+     * @description twitter menu hidden
+     * @default false
+     */
+    hidden?: boolean
+  }
   render?: (props: BubbleMenuRenderProps, dom: React.ReactNode) => React.ReactNode
 }
 
@@ -235,10 +255,56 @@ export interface ToolbarRenderProps {
   disabled: boolean
 }
 export interface ToolbarProps {
-  render?: (props: ToolbarRenderProps, toolbarItems: ToolbarItemProps[], dom: JSX.Element[], containerDom: (innerContent: React.ReactNode) => React.ReactNode) => React.ReactNode
+  render?: (props: ToolbarRenderProps, toolbarItems: ToolbarItemProps[], dom: any[], containerDom: (innerContent: React.ReactNode) => React.ReactNode) => React.ReactNode
 }
 
 export interface NameValueOption<T = string> {
   name: string
   value: T
 }
+
+export type VideoAlignment = 'flex-start' | 'center' | 'flex-end';
+
+export type PaperSize = 'Legal' | 'Letter' | 'Tabloid' | 'A0' | 'A1' | 'A2' | 'A3' | 'A4' | 'A5';
+
+export type PageMargin =
+  // Inches (in)
+  '0in'
+  | '0.25in'
+  | '0.4in'
+  | '0.5in'
+  | '0.75in'
+  | '1in'
+  | '1.25in'
+  | '1.5in'
+  | '1.75in'
+  | '2in'
+  // Centimeters (cm)
+  | '0cm'
+  | '0.5cm'
+  | '1cm'
+  | '1.5cm'
+  | '2cm'
+  | '2.5cm'
+  | '3cm'
+  | '4cm'
+  | '5cm'
+  // Millimeters (mm)
+  | '0mm'
+  | '5mm'
+  | '10mm'
+  | '15mm'
+  | '20mm'
+  | '25mm'
+  | '30mm'
+  | '40mm'
+  | '50mm'
+  // Points (pt)
+  | '0pt'
+  | '18pt'
+  | '36pt'
+  | '54pt'
+  | '72pt'
+  | '90pt'
+  | '108pt'
+  | '144pt';

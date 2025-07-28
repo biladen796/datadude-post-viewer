@@ -8,20 +8,21 @@ next:
 
 # CodeBlock
 
-- Based on TipTap's CodeBlock extension. [@tiptap/extension-code-block](https://tiptap.dev/docs/editor/extensions/nodes/code-block)
-
-- The `CodeBlock` extension allows you to add code blocks to your editor. It uses [Shiki](https://shiki.style/guide/) for syntax highlighting.
+- The `CodeBlock` extension allows you to add code blocks to your editor. It uses [prism-code-editor-lightweight](https://github.com/hunghg255/prism-code-editor-lightweight) for syntax highlighting.
 
 ## Usage
 
 ```tsx
-import { CodeBlock } from 'reactjs-tiptap-editor'; // [!code ++]
+import { CodeBlock } from 'reactjs-tiptap-editor/codeblock'; // [!code ++]
+
+import 'prism-code-editor-lightweight/layout.css'; // [!code ++]
+import 'prism-code-editor-lightweight/themes/github-dark.css'; // [!code ++]
 
 const extensions = [
   ...,
   // Import Extensions Here
-  CodeBlock.configure({ defaultTheme: 'dracula' }), // [!code ++]
+  CodeBlock, // [!code ++]
 ];
 ```
 
-- You can write `` ```ts ``, press <kbd>Enter</kbd>, and write some code! It loads the language on the fly.
+- You can write `` ``` ``, press <kbd>Enter</kbd>, and write some code! It loads the language on the fly.

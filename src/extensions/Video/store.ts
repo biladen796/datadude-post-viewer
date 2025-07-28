@@ -1,13 +1,15 @@
-import { createSignal, useSignalValue } from 'reactjs-signal'
-
-const dialogVideo = createSignal(false)
+import { useStoreUploadVideo } from '@/store/store';
+import { dispatchEvent } from '@/utils/customEvents/customEvents';
+import { EVENTS } from '@/utils/customEvents/events.constant';
 
 export function useDialogVideo() {
-  return useSignalValue(dialogVideo)
+  const [v] = useStoreUploadVideo(store => store.value);
+
+  return v;
 }
 
 export const actionDialogVideo = {
-  setOpen: (value: boolean) => {
-    dialogVideo.set(value)
+  setOpen: (id: any, value: boolean) => {
+    dispatchEvent(EVENTS.UPLOAD_VIDEO(id), value);
   },
-}
+};

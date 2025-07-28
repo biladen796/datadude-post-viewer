@@ -1,9 +1,14 @@
-import { Extension } from '@tiptap/core'
+import { Extension } from '@tiptap/core';
 
-import FontSizeMenuButton from './components/FontSizeMenuButton'
-import { ensureNameValueOptions } from '@/utils/utils'
-import { DEFAULT_FONT_SIZE_LIST, DEFAULT_FONT_SIZE_VALUE } from '@/constants'
-import type { GeneralOptions, NameValueOption } from '@/types'
+import { DEFAULT_FONT_SIZE_LIST, DEFAULT_FONT_SIZE_VALUE } from '@/constants';
+import type { GeneralOptions, NameValueOption } from '@/types';
+import { ensureNameValueOptions } from '@/utils/utils';
+
+import FontSizeMenuButton from './components/FontSizeMenuButton';
+
+export {
+  DEFAULT_FONT_SIZE_LIST
+};
 
 /**
  * Represents the interface for font size options, extending GeneralOptions.
@@ -35,7 +40,7 @@ declare module '@tiptap/core' {
   }
 }
 
-export const FontSize = Extension.create<FontSizeOptions>({
+export const FontSize = /* @__PURE__ */ Extension.create<FontSizeOptions>({
   name: 'fontSize',
   addOptions() {
     return {
@@ -43,43 +48,43 @@ export const FontSize = Extension.create<FontSizeOptions>({
       types: ['textStyle'],
       fontSizes: [...DEFAULT_FONT_SIZE_LIST],
       button({ editor, extension, t }) {
-        const fontSizes = ensureNameValueOptions(extension.options?.fontSizes || DEFAULT_FONT_SIZE_VALUE)
-        const defaultFontSize = ensureNameValueOptions([DEFAULT_FONT_SIZE_VALUE])[0]
+        const fontSizes = ensureNameValueOptions(extension.options?.fontSizes || DEFAULT_FONT_SIZE_VALUE);
+        const defaultFontSize = ensureNameValueOptions([DEFAULT_FONT_SIZE_VALUE])[0];
         const items = fontSizes.map(k => ({
           title: k.value === defaultFontSize.value ? t('editor.fontSize.default.tooltip') : String(k.name),
           isActive: () => {
-            const { fontSize } = editor.getAttributes('textStyle')
-            const isDefault = k.value === defaultFontSize.value
-            const notFontSize = fontSize === undefined
+            const { fontSize } = editor.getAttributes('textStyle');
+            const isDefault = k.value === defaultFontSize.value;
+            const notFontSize = fontSize === undefined;
             if (isDefault && notFontSize) {
-              return true
+              return true;
             }
-            return editor.isActive({ fontSize: String(k.value) }) || false
+            return editor.isActive({ fontSize: String(k.value) }) || false;
           },
           action: () => {
             if (k.value === defaultFontSize.value) {
-              editor.commands.unsetFontSize()
-              return
+              editor.commands.unsetFontSize();
+              return;
             }
-            editor.commands.setFontSize(String(k.value))
+            editor.commands.setFontSize(String(k.value));
           },
           disabled: !editor.can().setFontSize(String(k.value)),
           divider: k.value === defaultFontSize.value || false,
           default: k.value === defaultFontSize.value || false,
-        }))
-        const disabled = items.filter(k => k.disabled).length === items.length
+        }));
+        // const disabled = items.filter(k => k.disabled).length === items.length;
         return {
           component: FontSizeMenuButton,
           componentProps: {
             editor,
             tooltip: t('editor.fontSize.tooltip'),
-            disabled,
+            disabled: false,
             items,
             maxHeight: 280,
           },
-        }
+        };
       },
-    }
+    };
   },
   addGlobalAttributes() {
     return [
@@ -91,29 +96,29 @@ export const FontSize = Extension.create<FontSizeOptions>({
             parseHTML: element => element.style.fontSize.replaceAll(/["']+/g, ''),
             renderHTML: (attributes) => {
               if (!attributes.fontSize) {
-                return {}
+                return {};
               }
               return {
                 style: `font-size: ${attributes.fontSize}`,
-              }
+              };
             },
           },
         },
       },
-    ]
+    ];
   },
   addCommands() {
     return {
       setFontSize:
         fontSize =>
           ({ chain }) => {
-            return chain().setMark('textStyle', { fontSize }).run()
+            return chain().setMark('textStyle', { fontSize }).run();
           },
       unsetFontSize:
         () =>
           ({ chain }) => {
-            return chain().setMark('textStyle', { fontSize: null }).removeEmptyTextStyle().run()
+            return chain().setMark('textStyle', { fontSize: null }).removeEmptyTextStyle().run();
           },
-    }
+    };
   },
-})
+});

@@ -1,11 +1,11 @@
-import { Node } from '@tiptap/core'
+import { Node } from '@tiptap/core';
 
-import { ActionButton } from '@/components'
-import type { GeneralOptions } from '@/types'
+import { ActionButton } from '@/components';
+import type { GeneralOptions } from '@/types';
 
 export interface ClearOptions extends GeneralOptions<ClearOptions> {}
 
-export const Clear = Node.create<ClearOptions>({
+export const Clear = /* @__PURE__ */ Node.create<ClearOptions>({
   name: 'clear',
   addOptions() {
     return {
@@ -19,6 +19,6 @@ export const Clear = Node.create<ClearOptions>({
           tooltip: t('editor.clear.tooltip'),
         },
       }),
-    }
+    };
   },
-})
+});
