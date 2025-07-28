@@ -783,7 +783,6 @@
     "lint:fix": "eslint src --fix --quiet",
     "type-check": "tsc",
     "verify-commit": "verify-commit-msg",
-    "prepare": "git-scm-hooks",
     "release": "bumpp -r",
     "gen-changelog": "esno ./scripts/genExtensions.ts && esno ./scripts/changelog.ts",
     "modify-css": "esno ./scripts/modifyCss.ts",
