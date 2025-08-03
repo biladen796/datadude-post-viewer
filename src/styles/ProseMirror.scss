@@ -87,8 +87,41 @@
   }
   /* Block Quote */
   .blockquote {
-    @apply richtext-my-4 richtext-border-l-2 richtext-text-black richtext-border-l-gray-400 richtext-py-2 richtext-px-4 richtext-bg-opacity-80 richtext-rounded-lg richtext-rounded-tl-none richtext-rounded-bl-none;
+    background-color: #f6f6f7;
+    border-left: 4px solid #e8e8ea;
+    border-radius: 8px;
+    padding: 8px;
+    @apply richtext-my-4 richtext-text-black richtext-bg-opacity-80 richtext-rounded-lg richtext-italic;
     @apply dark:richtext-border-l-neutral-300 dark:richtext-text-white;
+
+    .blockquote-container {
+      @apply richtext-relative richtext-w-full richtext-flex richtext-flex-col richtext-gap-2;
+    }
+
+    .blockquote-header {
+      position: relative;
+      flex: 1;
+      @apply richtext-flex richtext-items-center richtext-justify-center;
+    }
+
+    .blockquote-avatar {
+      width: 50px;
+      height: 50px;
+      display: block;
+      @apply richtext-rounded-full richtext-object-contain;
+    }
+
+    .blockquote-icon-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    .blockquote-icon {
+      width: 30px;
+      @apply richtext-object-contain;
+    }
   }
 
   code {
